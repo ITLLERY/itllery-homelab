@@ -3,7 +3,7 @@
 **Reviewed:** 2026-11-15  
 **This is a public-safe inventory, not the private asset register.**
 
-I have **13 physical compute devices** in the wider inventory. **11 have an assigned current or planned lab role** and are described below. The other two are stored spares and don't appear as individual nodes here. A laptop and Raspberry Pi count as physical devices; VMs do not. Router and switch are separate network appliances.
+I have **13 physical compute devices** in the wider inventory. **11 are documented below** as the main public lab systems. Two additional machines are left out of the public inventory: one reserved for a future backup role and one unassigned spare. A laptop and Raspberry Pi count as physical devices; VMs do not. Router and switch are separate network appliances.
 
 ## Workstations and virtualized services
 
@@ -29,7 +29,6 @@ I have **13 physical compute devices** in the wider inventory. **11 have an assi
 | Physical device | Public hardware summary | Role / deployment note |
 | --- | --- | --- |
 | Primary PBS | Intel Core i7-8700 | Backup and restore workflows |
-| Secondary backup machine | TAROX tower-class system | Backup/recovery **planned**, not deployed off-site |
 | Jump Pi | Raspberry Pi 4 | Network utilities, DNS and monitoring |
 
 ## Network equipment (not included in the compute-node count)
