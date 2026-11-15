@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.kdbx
+*.pcap
+*.pcapng
+*.log
+*.qcow2
+*.vmdk
+*.ova
+.DS_Store
+Thumbs.db
