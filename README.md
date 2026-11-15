@@ -1,31 +1,29 @@
 # ITLLERY Homelab
 
-This is where I document my cybersecurity home lab: hardware, networking, virtualization, monitoring, backups and security experiments.
+This is where I document my cybersecurity home lab: the machines I use, what each one does, how I think about security and what I learn by building and testing things.
 
-The lab is always changing. **Some systems are running, others are still planned.** A folder doesn't mean a project is finished.
+The lab keeps changing. **Some parts are running, others are still planned.** A folder doesn't mean I've finished or tested that project.
 
-## Areas
+## The lab
 
-| Area | What it's for |
-| --- | --- |
-| Daily workstation | Linux, everyday work, GPU and video |
-| SOC Core | Proxmox, Wazuh and security monitoring |
-| Service node | VMs and supporting services |
-| Security Onion | Planned bare-metal network monitoring |
-| AI nodes | Local models and experiments |
-| HP Victus | Windows offline AI project; Kali later |
-| Wi-Fi sensor | Defensive wireless testing |
-| Isolated test node | Controlled tests and isolated malware analysis |
-| Network | MikroTik, switch, segmentation and WireGuard |
-| Backups | PBS, rescue workflow and planned off-site recovery |
-| Jump Pi | DNS and network monitoring |
+My wider inventory has **13 physical compute devices**. **11 have current or planned lab roles**, including the laptop and Raspberry Pi. The other two are stored spares and aren't part of this public design. Virtual machines don't count as separate physical nodes.
 
-## Notes
+I use dedicated systems for daily work, SOC monitoring, virtualization, local AI, controlled testing, network utilities and backup/recovery. I also use MikroTik and managed switching.
 
-- [Architecture](docs/architecture/README.md)
-- [Hardware](docs/hardware/README.md)
-- [Network](infrastructure/network/README.md)
-- [SOC](infrastructure/soc/README.md)
-- [Public sharing rules](docs/security/README.md)
+## Start here
 
-I'll add tested commands, configurations and results as the projects are completed. I don't upload live management IPs, passwords, full firewall exports or malware samples.
+- [Public architecture and role map](docs/architecture/README.md)
+- [Hardware and node roles](docs/hardware/README.md)
+- [What I share and what stays private](docs/security/README.md)
+- [Network notes](infrastructure/network/README.md)
+- [SOC monitoring](infrastructure/soc/README.md)
+- [Runbooks](runbooks/README.md)
+- [Sanitized evidence](evidence/sanitized/README.md)
+
+## What comes next
+
+I'll add commands, screenshots, detection rules, results and fixes as I complete and verify individual projects. The first priority is building and documenting an offline AI setup on a Windows laptop; Kali comes in a separate follow-up.
+
+I won't upload live network configuration, private access details, passwords, recovery secrets or malware binaries.
+
+**Build. Break. Detect. Defend. Prove.**
