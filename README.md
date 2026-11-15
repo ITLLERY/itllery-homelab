@@ -6,7 +6,7 @@ The lab keeps changing. **Some parts are running, others are still planned.** A 
 
 ## The lab
 
-My wider inventory has **13 physical compute devices**. **11 have current or planned lab roles**, including the laptop and Raspberry Pi. The other two are stored spares and aren't part of this public design. Virtual machines don't count as separate physical nodes.
+My wider inventory has **13 physical compute devices**. **11 are shown in this public overview**, including my laptop and Raspberry Pi. Two other machines are kept out of the detailed public inventory: one reserved for future backup work and one unassigned spare. Virtual machines don't count as separate physical nodes.
 
 I use dedicated systems for daily work, SOC monitoring, virtualization, local AI, controlled testing, network utilities and backup/recovery. I also use MikroTik and managed switching.
 
