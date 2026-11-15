@@ -7,8 +7,8 @@ I build and test my cybersecurity lab on separate physical systems. The idea is 
 
 ## Hardware at a glance
 
-- **11 physical compute devices with assigned current or planned roles.** These include my laptop and Raspberry Pi; not all 11 are running at the same time.
-- **2 additional stored machines** are excluded from this public architecture because they have no assigned lab role.
+- **11 physical compute devices selected for this public overview.** These include my laptop and Raspberry Pi; not all 11 are running at the same time.
+- **2 other machines** are excluded from the detailed public map: one reserved for future recovery, and one unassigned spare.
 - Network equipment (MikroTik and managed switching) is counted separately.
 - Virtual machines and containers are workloads, **not extra physical nodes**.
 
@@ -37,7 +37,6 @@ flowchart TB
     end
     subgraph Operations["Operations and recovery"]
         PBS["Primary PBS"]
-        Secondary["Secondary backup / future role"]
         Jump["Jump Pi"]
     end
 ```
