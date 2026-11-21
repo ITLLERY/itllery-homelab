@@ -1,9 +1,17 @@
 # ITLLERY — Public Lab Architecture
 
-**Last reviewed:** 2026-11-15  
+**Last reviewed:** 2026-11-21  
 **Scope:** Logical roles only. This is **not** a real network topology or a diagram of deployed connectivity.
 
 I build and test my cybersecurity lab on separate physical systems. The idea is to keep daily work, management, monitoring, local AI, backups and risky experiments from becoming one trusted environment.
+
+## Network baseline documentation
+
+- [Network infrastructure overview](network-overview.md)
+- [Public-safe conceptual topology](network-topology.md)
+- [Trust zones and segregation criteria](network-zones.md)
+- [As-Is / To-Be status and open work](as-is-vs-to-be.md)
+- [ADR-0001: segmentation and recovery](adr/0001-segmentation-and-recovery.md)
 
 ## Hardware at a glance
 

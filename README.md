@@ -13,17 +13,21 @@ I use dedicated systems for daily work, SOC monitoring, virtualization, local AI
 ## Start here
 
 - [Public architecture and role map](docs/architecture/README.md)
+- [Network infrastructure baseline (2026-11-21)](docs/architecture/network-overview.md)
+- [As-Is / To-Be network status](docs/architecture/as-is-vs-to-be.md)
 - [Hardware and node roles](docs/hardware/README.md)
 - [What I share and what stays private](docs/security/README.md)
-- [Network notes](infrastructure/network/README.md)
+- [Network platform notes](infrastructure/network/README.md)
 - [SOC monitoring](infrastructure/soc/README.md)
 - [Runbooks](runbooks/README.md)
 - [Sanitized evidence](evidence/sanitized/README.md)
+- [Documentation changelog](CHANGELOG.md)
 
-## What comes next
+## Current work
 
-I'll add commands, screenshots, detection rules, results and fixes as I complete and verify individual projects. The first priority is building and documenting an offline AI setup on a Windows laptop; Kali comes in a separate follow-up.
+The November 2026 priority is restoring and documenting a controlled, segmented network. Some management and routing paths have been recovered, while full switching, isolation, monitoring coverage and restore validation are still in progress. The [network validation register](evidence/sanitized/network-validation.md) separates session observations from pending evidence.
+
+I also plan a Windows laptop offline-AI build, with Kali in a separate follow-up. I'll add tested commands, detection rules, screenshots, results and fixes when each project is actually completed.
 
 I won't upload live network configuration, private access details, passwords, recovery secrets or malware binaries.
 
-**Build. Break. Detect. Defend. Prove.**
