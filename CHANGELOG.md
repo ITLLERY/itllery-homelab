@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-22 — Public hardware inventory v1.1
+
+- Added a detailed public-safe register for 11 documented compute devices (13 in the wider inventory, 2 omitted from detailed public disclosure).
+- Added CPU, RAM, accelerator and role details, plus a six-GPU summary.
+- Distinguished operating hosts, hardware available for experimentation, and not-yet-deployed security nodes.
+- Reconciled hardware navigation in the repository README and architecture overview.
+- Kept private storage inventory, IPs, port mapping, serial numbers and administrative access out of GitHub.
+
 This file tracks significant public documentation changes, not live device configuration changes.
 
 ## 2026-11-21 — Network baseline v1.0

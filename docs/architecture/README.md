@@ -20,7 +20,7 @@ I build and test my cybersecurity lab on separate physical systems. The idea is 
 - Network equipment (MikroTik and managed switching) is counted separately.
 - Virtual machines and containers are workloads, **not extra physical nodes**.
 
-See [the public hardware overview](../hardware/README.md) for role and hardware summaries.
+See [the public hardware overview](../hardware/README.md) and [detailed CPU / RAM / GPU inventory](../hardware/hardware-inventory.md) for the 11 documented physical device roles and current deployment status.
 
 ## Logical role map
 
