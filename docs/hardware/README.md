@@ -25,14 +25,14 @@ The wider lab inventory contains **13 physical compute devices**. **11 are docum
 
 | Device | Processor | RAM | Main accelerator | Status |
 | --- | --- | --- | --- | --- |
-| Daily workstation | CPU pending re-verification | 64 GB DDR5 | ASUS ROG Astral RTX 5090 32 GB | Operating; Samsung 9100 PRO 4 TB M.2 NVMe |
+| Daily workstation | AMD Ryzen 9 9950X | 64 GB DDR5 | ASUS ROG Astral RTX 5090 32 GB | Operating; Samsung 9100 PRO 4 TB M.2 NVMe |
 | SOC Core Proxmox | i9-13900K | 128 GB | RTX A2000 12 GB | Operating |
 | Service Proxmox | i7-13700K | 64 GB | — | Operating |
 | Security Onion bare metal | i9-13900K | 64 GB DDR5 | — | Deployment planned |
 | AI Node 01 (ROG Maximus XI Z390) | i9-9900K | 64 GB DDR4 | ASUS ROG Strix RTX 3090 24 GB | Hardware documented |
-| AI Node 02 | i9-9900K | 64 GB DDR4 | Gigabyte RTX 3060 12 GB (3-fan) + ASUS ROG Strix RTX 2080 Ti 11 GB | Hardware documented |
+| AI Node 02 (ASUS TUF Z390) | i9-9900K | 64 GB DDR4 | Gigabyte RTX 3060 12 GB (3-fan) + ASUS ROG Strix RTX 2080 Ti 11 GB | Hardware documented |
 | Wi-Fi sensor ProDesk | i5-10500T | 16 GB | Integrated | Not deployed |
-| Isolated test ProDesk | i5-10500T | 64 GB installed | Integrated | Hardware ready, 2 TB SSD |
+| Isolated test ProDesk | i5-10500T | 64 GB installed | Integrated | Hardware ready, 2 TB M.2 SSD |
 | Primary PBS | i7-8700 | 32 GB DDR4 | — | On-demand, 2 × 6 TB RAID1 |
 | Raspberry Pi 4 | Broadcom ARM platform | 8 GB LPDDR4 | Integrated | Utility / jump role |
 | HP Victus laptop | Ryzen 7 7840HS | 32 GB DDR5 | RTX 4070 Laptop 8 GB | Windows offline-AI build |

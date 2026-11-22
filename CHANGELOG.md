@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-22 — Workstation CPU and inventory presentation v1.4
+
+- Confirmed the Daily workstation CPU as AMD Ryzen 9 9950X.
+- Matched the AI Node 02 platform table styling to AI Node 01 using bold Intel CPU and ASUS TUF Z390 motherboard fields.
+- Clarified the isolated HP ProDesk test node's 2 TB SSD as an M.2 form-factor drive (exact interface/model not asserted).
+- No changes to live infrastructure configurations.
+
 ## 2026-11-22 — Hardware platform and memory specification corrections v1.3
 
 - Documented AI Node 01 as an ASUS ROG Maximus XI (Z390) build with an ASUS ROG Strix RTX 3090 24 GB.
