@@ -58,8 +58,6 @@ flowchart TB
     style Monitoring fill:#0C1525,stroke:#2569DB,stroke-width:1.5px,color:#EAF2FF
 ```
 
-The dark background, blue outlines and white labels follow my ITLLERY colours. I shortened the headings and switched to SVG text labels to avoid the clipped titles in GitHub. Dashed blue borders indicate a planned component. The invisible connections in the Mermaid source only keep the layout compact; they are **not** network links.
-
 The diagram isn't a wiring map. It doesn't show real VLANs, trunk ports, access rules, management routes or the Security Onion mirror source. A box appearing beside another box doesn't mean the two systems can reach each other.
 
 The monitoring role is also still being developed. I haven't verified full Security Onion packet visibility, and a drawing can't demonstrate isolation or successful recovery from a backup.
