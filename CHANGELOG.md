@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-22 — Wi-Fi sensor hardware clarification v1.5
+
+- Identified the Wi-Fi sensor's SSD as a Samsung 970 EVO M.2 NVMe drive.
+- Recorded the wireless adapter model as Alfa AWUS036AXML.
+- Kept OS installation and monitoring deployment status separate from the confirmed hardware inventory.
+
 ## 2026-11-22 — Workstation CPU and inventory presentation v1.4
 
 - Confirmed the Daily workstation CPU as AMD Ryzen 9 9950X.

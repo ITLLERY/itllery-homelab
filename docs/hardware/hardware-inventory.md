@@ -35,7 +35,7 @@ The MikroTik hAP ax² router and managed TP-Link switch are **network appliances
 | **Security Onion host** | **Intel Core i9-13900K**, dedicated bare-metal platform | **64 GB DDR5** | No GPU requirement documented | Security Onion network analysis / packet capture; **deployment planned, not verified complete** |
 | **AI Node 01** | **Intel Core i9-9900K**, **ASUS ROG Maximus XI (Z390)** | **64 GB DDR4** | **ASUS ROG Strix RTX 3090, 24 GB** | Local model inference and experiments; hardware reported, latest workload status not independently checked |
 | **AI Node 02** | **Intel Core i9-9900K**, **ASUS TUF Z390** | **64 GB DDR4** | **Gigabyte GeForce RTX 3060, 12 GB (triple-fan)** + **ASUS ROG Strix GeForce RTX 2080 Ti, 11 GB** | Secondary local AI compute; hardware reported, latest workload status not independently checked |
-| **Wi-Fi sensor mini** | **HP ProDesk 400 G6 Mini**, **Intel Core i5-10500T** | **16 GB DDR4 (2 × 8 GB)** | Integrated graphics | Planned wireless monitoring; **OS / deployment not complete** |
+| **Wi-Fi sensor mini** | **HP ProDesk 400 G6 Mini**, **Intel Core i5-10500T** | **16 GB DDR4 (2 × 8 GB)** | Integrated graphics | **Samsung 970 EVO M.2 NVMe SSD**; **Alfa AWUS036AXML USB Wi-Fi adapter**; **OS / monitoring deployment not yet verified** |
 | **Isolated test mini** | **HP ProDesk 400 G6 Mini**, **Intel Core i5-10500T** | **64 GB DDR4 (2 × 32 GB installed)** | Integrated graphics | Controlled purple-team experiments and isolated high-risk analysis; **hardware ready**, isolation and exercise validation tracked separately |
 | **Primary PBS** | **Intel Core i7-8700**, Proxmox Backup Server | **32 GB DDR4** | Not specified | On-demand backup system; **2 × 6 TB drives in RAID1** |
 | **Jump / utility node** | **Raspberry Pi 4** | **8 GB LPDDR4** | Integrated graphics | Network utility and approved administration role; services reported operating |
@@ -60,7 +60,7 @@ The MikroTik hAP ax² router and managed TP-Link switch are **network appliances
 ### Security monitoring and test nodes
 
 - **Dedicated Security Onion host:** Intel Core i9-13900K, 64 GB DDR5 RAM, with a separate high-performance storage plan for operating system and packet capture and an Intel I350-class network adapter reported in the build plan. Bare-metal installation and mirror/capture validation remain separate acceptance milestones.
-- **Wi-Fi sensor:** HP ProDesk 400 G6 Mini with i5-10500T and 16 GB RAM (2 × 8 GB). A Samsung NVMe SSD was selected/tested for this node; OS installation and production monitoring have **not** been confirmed. The planned wireless workflow uses a compatible external adapter.
+- **Wi-Fi sensor:** HP ProDesk 400 G6 Mini with i5-10500T, 16 GB DDR4 (2 × 8 GB), a **Samsung 970 EVO M.2 NVMe SSD** and an **Alfa AWUS036AXML USB Wi-Fi adapter** for wireless monitoring experiments. OS installation, monitor-mode operation and production monitoring have **not yet been confirmed** in this public documentation.
 - **Isolated test system:** Second HP ProDesk 400 G6 Mini with i5-10500T. **64 GB RAM (2 × 32 GB) and a 2 TB M.2 SSD are installed**; the hardware build is ready for controlled experiments. The operating system, access isolation and safe-handling procedures require their own validation before any high-risk testing.
 
 ### Recovery and utilities
