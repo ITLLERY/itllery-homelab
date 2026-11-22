@@ -1,42 +1,19 @@
-# ITLLERY — Public Hardware Overview
+# ITLLERY — Hardware
 
-**Reviewed:** 2026-11-22  
-**This is a public-safe inventory, not the private asset register.**
+**Last updated:** 2026-11-22
 
-The wider lab inventory contains **13 physical compute devices**. **11 are documented publicly**, including a laptop and Raspberry Pi; **2 reserve machines** stay out of the detailed public inventory. MikroTik routing and TP-Link managed switching are separate network appliances. Virtual machines are not physical devices.
+I document the physical machines behind my cybersecurity lab here, including their hardware, roles and deployment status.
 
-## Detailed hardware register
+My wider inventory includes **13 physical compute devices**. I describe **11 of them** publicly, including my laptop and Raspberry Pi. I keep two reserve machines out of the detailed public inventory. I count the MikroTik router and managed TP-Link switch separately; virtual machines and containers are not additional physical machines.
 
-**[View the full hardware inventory (CPU, RAM, GPU, role and deployment status)](hardware-inventory.md)**
+## Detailed hardware inventory
 
-| Physical role | Quantity |
-| --- | ---: |
-| Daily workstation | 1 |
-| Proxmox hosts (SOC Core + Service) | 2 |
-| Dedicated Security Onion hardware (deployment planned) | 1 |
-| AI compute nodes | 2 |
-| HP ProDesk security minis (sensor + isolated test node) | 2 |
-| Primary PBS | 1 |
-| Raspberry Pi utility / jump host | 1 |
-| HP Victus laptop | 1 |
-| **Publicly documented compute devices** | **11** |
+**[Full hardware inventory — CPU, RAM, GPU, storage notes and deployment status](hardware-inventory.md)**
 
-## Quick specifications
+I keep the specifications in one place instead of repeating the same table on multiple pages. The detailed inventory covers my Proxmox hosts, AI nodes, Security Onion build, Wi-Fi sensor, isolated test node, backup server and daily workstation.
 
-| Device | Processor | RAM | Main accelerator | Status |
-| --- | --- | --- | --- | --- |
-| Daily workstation | AMD Ryzen 9 9950X | 64 GB DDR5 | ASUS ROG Astral RTX 5090 32 GB | Operating; Samsung 9100 PRO 4 TB M.2 NVMe |
-| SOC Core Proxmox | i9-13900K | 128 GB | RTX A2000 12 GB | Operating |
-| Service Proxmox | i7-13700K | 64 GB | — | Operating |
-| Security Onion bare metal | i9-13900K | 64 GB DDR5 | — | Deployment planned |
-| AI Node 01 (ROG Maximus XI Z390) | i9-9900K | 64 GB DDR4 | ASUS ROG Strix RTX 3090 24 GB | Hardware documented |
-| AI Node 02 (ASUS TUF Z390) | i9-9900K | 64 GB DDR4 | Gigabyte RTX 3060 12 GB (3-fan) + ASUS ROG Strix RTX 2080 Ti 11 GB | Hardware documented |
-| Wi-Fi sensor ProDesk | i5-10500T | 16 GB DDR4 | Integrated | Samsung 970 EVO M.2; Alfa AWUS036AXML; deployment not verified |
-| Isolated test ProDesk | i5-10500T | 64 GB DDR4 | Integrated | Hardware ready, 2 TB M.2 SSD |
-| Primary PBS | i7-8700 | 32 GB DDR4 | — | On-demand; 2 × 6 TB WD Red HDD RAID1; backup cap ~60 MiB/s |
-| Raspberry Pi 4 | Broadcom ARM platform | 8 GB LPDDR4 | Integrated | Utility / jump role |
-| HP Victus laptop | Ryzen 7 7840HS | 32 GB DDR5 | RTX 4070 Laptop 8 GB | Windows offline-AI build |
+## Documentation approach
 
-**Deployment note:** Specs are based on owner-reported hardware. A hardware entry does not imply an installed operating system or completed security validation. For full notes and limitations, follow the detailed inventory link above.
+I distinguish between hardware I have, systems I have configured and functions I have tested. A listed machine does not necessarily mean its planned software or monitoring setup is complete.
 
-No live addresses, real VLANs, port maps, serial/MAC identifiers, credentials, raw configurations or backup placement, secrets, encryption or retention details are published.
+I keep private IP addresses, VLAN IDs, management paths, port maps, serial numbers, credentials, backup placement and live configurations out of this public repository.

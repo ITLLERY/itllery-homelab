@@ -8,7 +8,7 @@ Administration should be possible for authorized operations without creating an 
 
 ## Session observations
 
-During the November restoration, authorized router-management access and WireGuard administration were reported functional. The two Proxmox management web interfaces were accessible from the approved working context. Command-line administration of infrastructure systems is expected to use a controlled administrative path rather than unrestricted access.
+During the November restoration, I confirmed authorized router-management and WireGuard access and reached both Proxmox web interfaces from my approved working context. I use a controlled administration path for command-line access rather than enabling unrestricted management.
 
 These observations are limited to the methods and circumstances tested; they are not proof that all alternative management paths are closed.
 

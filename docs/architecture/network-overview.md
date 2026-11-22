@@ -7,7 +7,7 @@
 | Baseline date | 2026-11-21 |
 | Classification | PUBLIC / SANITIZED |
 | Scope | Home laboratory network; not a production enterprise deployment |
-| Verification basis | Operator session notes from the November 2026 network recovery |
+| Verification basis | My notes from the November 2026 network recovery |
 
 ## Purpose
 
@@ -38,7 +38,7 @@ See [the public hardware inventory](../hardware/README.md) for general node desc
 
 ## Current baseline
 
-During the November recovery, routing and management reachability were restored, selected firewall drop counters were observed, and both Proxmox management interfaces were reached from an authorized work context. A router configuration export and backup were reported completed. These observations are not equivalent to an exhaustive security review or a tested bare-metal restore.
+During the November recovery, I restored routing and management reachability, reviewed selected firewall drop counters and reached both Proxmox management interfaces from an authorized context. I also created a router configuration export and backup. These observations do not amount to a complete security review or a tested bare-metal restore.
 
 Parts of the switch configuration, full inter-zone testing and Security Onion traffic visibility still need confirmation. Details and evidence limitations are tracked in [As-Is vs To-Be](as-is-vs-to-be.md) and the [validation register](../../evidence/sanitized/network-validation.md).
 

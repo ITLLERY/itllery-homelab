@@ -6,7 +6,7 @@
 
 ## Status vocabulary
 
-- **Session-observed:** Seen or operator-confirmed during the November restoration; the raw evidence is not published.
+- **Session-observed:** I saw or confirmed this during the November recovery, but I have not published the raw evidence.
 - **Implemented, recheck needed:** Configuration appears present but the required acceptance test has not been fully retained.
 - **Partially verified:** Some functionality was tested; full coverage is not established.
 - **Planned:** Intentional future work, not a claim of deployment.
@@ -18,7 +18,7 @@
 | VLAN-aware switching | Partially verified: active paths work | Finish outstanding switch management and access-port checks |
 | Administrative access | Session-observed: authorized remote/management access available | Record reproducible positive/negative management-access tests |
 | Proxmox management | Session-observed: both hosts available in browser | Retain redacted evidence after a planned network validation |
-| Router backup | Operator-confirmed: export and backup created | Check retention, integrity and perform a controlled restore exercise |
+| Router backup | Session-observed: I created an export and a backup | Check retention, integrity and perform a controlled restore exercise |
 | Rescue path | Implemented, recheck needed | Demonstrate an isolated, controlled recovery drill without risking live access |
 | Segmentation coverage | Partially verified; selected drops observed | Verify all intended zone-pair outcomes from actual source endpoints |
 | Security Onion monitoring | Planned | Complete bare-metal setup, mirror design and packet/alert validation |
