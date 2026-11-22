@@ -23,29 +23,59 @@ The [hardware inventory](../hardware/hardware-inventory.md) has the CPU, RAM, GP
 ## Roles in the lab
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"background":"#080C14","primaryColor":"#14233F","primaryTextColor":"#F5F8FF","primaryBorderColor":"#2375FF","lineColor":"#3380FF","secondaryColor":"#0D1627","tertiaryColor":"#0D1627","clusterBkg":"#0C1525","clusterBorder":"#2872E8","fontFamily":"Arial, Helvetica, sans-serif","fontSize":"15px"},"flowchart":{"nodeSpacing":18,"rankSpacing":25,"padding":14}}}%%
 flowchart TB
-    subgraph Work["Everyday work"]
+    subgraph Everyday["EVERYDAY WORK"]
+        direction LR
         Daily["Daily Linux workstation"]
-        Laptop["Windows / Kali laptop"]
+        Laptop["Windows laptop / Kali planned"]
     end
-    subgraph Core["Virtualization and SOC"]
+
+    subgraph Core["VIRTUALIZATION AND SOC"]
+        direction LR
         SOC["SOC Core / Proxmox"]
-        Services["Service Proxmox"]
+        Services["Service / Proxmox"]
         Onion["Security Onion / planned"]
     end
-    subgraph Compute["Local AI"]
+
+    subgraph Compute["LOCAL AI"]
+        direction LR
         AI1["AI Node 01"]
         AI2["AI Node 02"]
     end
-    subgraph Testing["Specialized test systems"]
+
+    subgraph Testing["SECURITY TEST SYSTEMS"]
+        direction LR
         WiFi["Wi-Fi sensor"]
         Isolated["Isolated test node"]
     end
-    subgraph Operations["Operations and recovery"]
+
+    subgraph Operations["BACKUP AND OPERATIONS"]
+        direction LR
         PBS["Primary PBS"]
         Jump["Jump Pi"]
     end
+
+    %% Invisible links control the layout; they do NOT indicate physical connections.
+    Everyday ~~~ Core
+    Core ~~~ Compute
+    Compute ~~~ Testing
+    Testing ~~~ Operations
+
+    classDef regular fill:#12233F,stroke:#2777FF,color:#F5F8FF,stroke-width:1.7px;
+    classDef accent fill:#174284,stroke:#57A0FF,color:#FFFFFF,stroke-width:2px;
+    classDef planned fill:#111827,stroke:#64A5FF,color:#E8F1FF,stroke-width:2px,stroke-dasharray:6 4;
+    class Daily,Laptop,SOC,Services,AI1,AI2,WiFi,Isolated,PBS,Jump regular;
+    class Onion planned;
+    class SOC,Services accent;
+    style Everyday fill:#0C1525,stroke:#2569DB,stroke-width:1.5px,color:#EAF2FF
+    style Core fill:#0C1525,stroke:#2569DB,stroke-width:1.5px,color:#EAF2FF
+    style Compute fill:#0C1525,stroke:#2569DB,stroke-width:1.5px,color:#EAF2FF
+    style Testing fill:#0C1525,stroke:#2569DB,stroke-width:1.5px,color:#EAF2FF
+    style Operations fill:#0C1525,stroke:#2569DB,stroke-width:1.5px,color:#EAF2FF
 ```
+
+I use the same black-and-blue ITLLERY style here as in the [network role diagram](network-topology.md). Dashed outlines mark components that are still planned; invisible Mermaid layout links do not describe real network connections.
 
 I use the daily workstation for normal work, while the Proxmox hosts run service and security workloads. The AI nodes are separate so experiments with local models don't have to share my daily environment. The Wi-Fi sensor and isolated test machine have their own purposes. Backup and recovery are also separate jobs.
 
