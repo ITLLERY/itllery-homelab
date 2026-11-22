@@ -34,7 +34,7 @@ The MikroTik hAP ax² router and managed TP-Link switch are **network appliances
 | **Service Proxmox** | **Intel Core i7-13700K**, Proxmox | **64 GB DDR5** | Not specified | General infrastructure services and VMs; operating |
 | **Security Onion host** | **Intel Core i9-13900K**, dedicated bare-metal platform | **64 GB DDR5** | No GPU requirement documented | Security Onion network analysis / packet capture; **deployment planned, not verified complete** |
 | **AI Node 01** | **Intel Core i9-9900K**, **ASUS ROG Maximus XI (Z390)** | **64 GB DDR4** | **ASUS ROG Strix RTX 3090, 24 GB** | Local model inference and experiments; hardware reported, latest workload status not independently checked |
-| **AI Node 02** | **Intel Core i9-9900K**, ASUS TUF Z390 platform | **64 GB DDR4** | **RTX 3060, 12 GB** + **RTX 2080 Ti, 11 GB** | Secondary local AI compute; hardware reported, latest workload status not independently checked |
+| **AI Node 02** | **Intel Core i9-9900K**, ASUS TUF Z390 platform | **64 GB DDR4** | **Gigabyte GeForce RTX 3060, 12 GB (triple-fan)** + **ASUS ROG Strix GeForce RTX 2080 Ti, 11 GB** | Secondary local AI compute; hardware reported, latest workload status not independently checked |
 | **Wi-Fi sensor mini** | **HP ProDesk 400 G6 Mini**, **Intel Core i5-10500T** | **16 GB DDR4 (2 × 8 GB)** | Integrated graphics | Planned wireless monitoring; **OS / deployment not complete** |
 | **Isolated test mini** | **HP ProDesk 400 G6 Mini**, **Intel Core i5-10500T** | **64 GB DDR4 (2 × 32 GB installed)** | Integrated graphics | Controlled purple-team experiments and isolated high-risk analysis; **hardware ready**, isolation and exercise validation tracked separately |
 | **Primary PBS** | **Intel Core i7-8700**, Proxmox Backup Server | **32 GB DDR4** | Not specified | On-demand backup system; **2 × 6 TB drives in RAID1** |
@@ -55,7 +55,7 @@ The MikroTik hAP ax² router and managed TP-Link switch are **network appliances
 ### Local AI
 
 - **AI Node 01:** Intel Core i9-9900K on an ASUS ROG Maximus XI Z390 motherboard (exact Maximus XI submodel not yet recorded), 64 GB DDR4 and an ASUS ROG Strix GeForce RTX 3090 (24 GB VRAM).
-- **AI Node 02:** Intel Core i9-9900K on an ASUS TUF Z390 board, 64 GB DDR4, one RTX 3060 (12 GB VRAM) and one RTX 2080 Ti (11 GB VRAM). The two GPUs are separate devices: **VRAM does not automatically combine into one contiguous pool**.
+- **AI Node 02:** Intel Core i9-9900K on an ASUS TUF Z390 board, 64 GB DDR4, one Gigabyte GeForce RTX 3060 (12 GB VRAM, three-fan cooler; exact Gigabyte variant not yet recorded) and one ASUS ROG Strix GeForce RTX 2080 Ti (11 GB VRAM). The two GPUs are separate devices: **VRAM does not automatically combine into one contiguous pool**.
 
 ### Security monitoring and test nodes
 
@@ -75,8 +75,8 @@ The MikroTik hAP ax² router and managed TP-Link switch are **network appliances
 | ASUS ROG Astral GeForce RTX 5090 | 1 | 32 GB |
 | NVIDIA RTX A2000 | 1 | 12 GB |
 | ASUS ROG Strix GeForce RTX 3090 | 1 | 24 GB |
-| NVIDIA GeForce RTX 3060 | 1 | 12 GB |
-| NVIDIA GeForce RTX 2080 Ti | 1 | 11 GB |
+| Gigabyte GeForce RTX 3060 (triple-fan) | 1 | 12 GB |
+| ASUS ROG Strix GeForce RTX 2080 Ti | 1 | 11 GB |
 | NVIDIA GeForce RTX 4070 Laptop GPU | 1 | 8 GB |
 | **Total discrete NVIDIA GPUs in this public register** | **6** | **Not a shared VRAM pool** |
 

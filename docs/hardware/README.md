@@ -30,7 +30,7 @@ The wider lab inventory contains **13 physical compute devices**. **11 are docum
 | Service Proxmox | i7-13700K | 64 GB | — | Operating |
 | Security Onion bare metal | i9-13900K | 64 GB DDR5 | — | Deployment planned |
 | AI Node 01 (ROG Maximus XI Z390) | i9-9900K | 64 GB DDR4 | ASUS ROG Strix RTX 3090 24 GB | Hardware documented |
-| AI Node 02 | i9-9900K | 64 GB | RTX 3060 12 GB + RTX 2080 Ti 11 GB | Hardware documented |
+| AI Node 02 | i9-9900K | 64 GB DDR4 | Gigabyte RTX 3060 12 GB (3-fan) + ASUS ROG Strix RTX 2080 Ti 11 GB | Hardware documented |
 | Wi-Fi sensor ProDesk | i5-10500T | 16 GB | Integrated | Not deployed |
 | Isolated test ProDesk | i5-10500T | 64 GB installed | Integrated | Hardware ready, 2 TB SSD |
 | Primary PBS | i7-8700 | 32 GB DDR4 | — | On-demand, 2 × 6 TB RAID1 |
