@@ -29,8 +29,8 @@ I count my MikroTik hAP ax² router and managed TP-Link switch as separate **net
 | ID / role | Platform / processor | System RAM | Graphics / accelerators | Use and status |
 | --- | --- | --- | --- | --- |
 | **Daily workstation** | **AMD Ryzen 9 9950X**, Ubuntu desktop | **64 GB DDR5** | **ASUS ROG Astral GeForce RTX 5090, 32 GB** | Primary working system, video production and GPU work; operating |
-| **SOC Core** | **Intel Core i9-13900K**, Proxmox | **128 GB DDR5** | **RTX A2000, 12 GB** | Virtualized security services and Wazuh-related workloads; operating |
-| **Service Proxmox** | **Intel Core i7-13700K**, Proxmox | **64 GB DDR5** | Integrated graphics | General infrastructure services and VMs; operating |
+| **SOC Core** | **Lenovo ThinkStation P3**, **Intel Core i9-13900K**, Proxmox | **128 GB DDR5** | **RTX A2000, 12 GB** | Virtualized security services and Wazuh-related workloads; operating |
+| **Service Proxmox** | **Lenovo platform**, **Intel Core i7-13700K**, Proxmox | **64 GB DDR5** | Integrated graphics | General infrastructure services and VMs; operating |
 | **Security Onion host** | **Intel Core i9-13900K**, dedicated bare-metal platform | **64 GB DDR5** | Integrated graphics | Security Onion network analysis / packet capture; **deployment planned, not verified complete** |
 | **AI Node 01** | **Intel Core i9-9900K**, **ASUS ROG Maximus XI Z390** | **64 GB DDR4** | **ASUS ROG Strix RTX 3090, 24 GB** | Local model inference and experiments; I have not rechecked workloads for this inventory update |
 | **AI Node 02** | **Intel Core i9-9900K**, **ASUS TUF Z390** | **64 GB DDR4** | **Gigabyte GeForce RTX 3060, 12 GB (triple-fan)** + **ASUS ROG Strix GeForce RTX 2080 Ti, 11 GB** | Secondary local AI compute; I have not rechecked workloads for this inventory update |
@@ -47,9 +47,13 @@ I count my MikroTik hAP ax² router and managed TP-Link switch as separate **net
 ### Workstation and virtualized services
 
 - **Daily workstation:** Linux/Ubuntu-based desktop with an AMD Ryzen 9 9950X CPU, 64 GB DDR5 RAM, an ASUS ROG Astral GeForce RTX 5090 (32 GB VRAM), and a **Samsung 9100 PRO 4 TB M.2 NVMe SSD**. I have not added the workstation motherboard model to this inventory.
-- **SOC Core:** Intel Core i9-13900K, 128 GB DDR5, RTX A2000 12 GB and Proxmox. Runs the primary virtualized security environment. The separate Security Onion bare-metal system is **not** counted as a VM of this host.
-- **Service Proxmox:** Intel Core i7-13700K and 64 GB DDR5. During the November network recovery, I reached the management interfaces of both Proxmox hosts.
+- **SOC Core:** My Lenovo ThinkStation P3 runs an Intel Core i9-13900K, 128 GB DDR5, RTX A2000 12 GB and Proxmox. On 21 October 2026 I checked BIOS **S0IKT78A** (dated **30 July 2025**) and active Linux microcode **0x132**. The CPU stress check completed without hardware errors or instability in the logs I inspected. The separate Security Onion bare-metal system is **not** counted as a VM of this host.
+- **Service Proxmox:** My Lenovo-based service host runs an Intel Core i7-13700K and 64 GB DDR5. On 21 October 2026 I checked BIOS **S0IKT72A** (dated **24 December 2024**) and active Linux microcode **0x132**. The CPU and RAM stress checks completed without reported errors. During the November network recovery, I reached both Proxmox management interfaces.
 - **HP Victus laptop:** Ryzen 7 7840HS, 32 GB DDR5 RAM and RTX 4070 Laptop GPU (8 GB). The Windows offline-AI build and benchmarks are a separate project; I will add the results once I finish testing.
+
+### Lenovo BIOS and CPU stability checks
+
+I checked both running Lenovo-based Proxmox hosts on **21 October 2026**. Neither showed hardware errors or instability in the checks I ran. This is a useful stability result, but **it does not prove that physical CPU degradation is impossible or absent**. I keep the BIOS versions, microcode readings and actual tests in [my Lenovo BIOS and stability notes](lenovo-bios-stability.md).
 
 ### Local AI
 

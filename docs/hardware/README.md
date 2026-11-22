@@ -12,6 +12,10 @@ My wider inventory includes **13 physical compute devices**. I describe **11 of 
 
 I keep the full specification table in one place so I don't have to update the same information on several pages. The detailed inventory covers my Proxmox hosts, AI nodes, Security Onion build, Wi-Fi sensor, isolated test node, backup server and daily workstation.
 
+## BIOS and CPU stability
+
+I also keep my [Lenovo BIOS and CPU stability checks](lenovo-bios-stability.md) from October 2026. The test results showed no instability or hardware errors during those checks, but a short stability test cannot prove the absence of long-term degradation.
+
 ## Documentation approach
 
 I distinguish between hardware I have, systems I have configured and functions I have tested. A listed machine does not necessarily mean its planned software or monitoring setup is complete.

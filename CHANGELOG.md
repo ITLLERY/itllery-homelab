@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-22 — Lenovo BIOS checks and Mermaid label fixes
+
+- Added my October 2026 Lenovo BIOS and CPU stability observations for the SOC Core and Service Proxmox hosts, including BIOS versions, active Linux microcode and the tests performed.
+- Recorded that I saw no CPU instability or hardware errors during those checks, without claiming a diagnostic proof that degradation never occurred.
+- Shortened the Mermaid group and node labels in both architecture diagrams and disabled HTML labels to reduce text clipping on GitHub while keeping the ITLLERY blue-and-black style.
+- Documentation only; no new tests or changes to live BIOS, microcode or network settings.
+
 ## 2026-11-22 — Documentation rewrite
 
 - Reworked my GitHub notes into clearer, more natural English while keeping the technical details and existing test statuses.
