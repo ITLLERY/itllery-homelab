@@ -6,7 +6,7 @@
 
 ## How many machines I have
 
-My wider inventory currently contains **13 physical compute devices**. I document **11 of them** in this public register and keep **2 reserve machines** out of the detailed list. Being in my inventory does not mean a device is deployed or online.
+My inventory currently contains **13 physical compute devices**. I document **11 of them** in this public register and keep **2 reserve machines** out of the detailed list. Being in my inventory does not mean a device is deployed or online.
 
 | Category | Publicly documented physical devices |
 | --- | ---: |

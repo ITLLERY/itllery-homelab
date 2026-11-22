@@ -4,7 +4,7 @@
 
 I keep the hardware information for my cybersecurity lab here. The detailed page covers the machines I use, the components inside them and what each one is for.
 
-My wider inventory includes **13 physical compute devices**. I describe **11 of them** publicly, including my laptop and Raspberry Pi. I keep two reserve machines out of the detailed public inventory. I count the MikroTik router and managed TP-Link switch separately; virtual machines and containers are not additional physical machines.
+My inventory includes **13 physical compute devices**. I describe **11 of them** publicly, including my laptop and Raspberry Pi. I keep two reserve machines out of the detailed public inventory. I count the MikroTik router and managed TP-Link switch separately; virtual machines and containers are not additional physical machines.
 
 ## Detailed hardware inventory
 

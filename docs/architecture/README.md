@@ -16,7 +16,7 @@ The diagram below shows the **roles** of the machines. It isn't a picture of the
 
 ## Physical systems
 
-My wider inventory contains **13 compute devices**. I document **11 devices** publicly, including my laptop and Raspberry Pi, and leave two reserve machines out of the detailed list. The MikroTik router and TP-Link switch aren't part of the compute-device count.
+My inventory contains **13 compute devices**. I document **11 devices** publicly, including my laptop and Raspberry Pi, and leave two reserve machines out of the detailed list. The MikroTik router and TP-Link switch aren't part of the compute-device count.
 
 The [hardware inventory](../hardware/hardware-inventory.md) has the CPU, RAM, GPU and role details. Not every machine runs all the time, and having the hardware ready doesn't mean its intended software is installed.
 
