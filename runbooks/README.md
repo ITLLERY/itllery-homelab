@@ -1,10 +1,8 @@
 # Runbooks
 
-I use runbooks to describe preconditions, safe execution, acceptance checks, rollback and evidence. A draft procedure is **not** represented as a completed rehearsal.
+I keep these notes because changing network settings without a recovery plan has already cost me time. Before I touch something important, I want to know what the current setup looks like, what I expect to change and how I can get back if it goes wrong.
 
-## Network operations
+- [Preparing and testing a network change](network-change-procedure.md)
+- [Recovering from a network problem](network-recovery.md)
 
-- [RB-NET-001 — Controlled Network Change](network-change-procedure.md)
-- [RB-NET-002 — Network Recovery and Safe Rollback](network-recovery.md)
-
-Private operational details (real paths, credentials, router backups, device-specific recovery instructions) are kept outside the public repository. Evidence and outcomes appear only after review and sanitization.
+These are procedures I use to plan the work. They aren't proof that I've rehearsed every failure case. I keep real login details, port maps, backups and recovery access paths in private documentation.

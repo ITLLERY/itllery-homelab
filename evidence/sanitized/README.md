@@ -1,9 +1,7 @@
-# Sanitized Evidence
+# Test evidence
 
-Only reviewed screenshots, non-sensitive log excerpts, validation records and diagrams belong here. No unredacted packet captures, configuration exports, private network identifiers or secrets.
+I keep public-safe test notes and screenshots here after checking them for private information. I don't upload raw packet captures, full device configurations or logs containing credentials and internal identifiers.
 
-## Current register
+The current [network validation register](network-validation.md) is based on the November 2026 recovery. Some results were observed during that work, but I haven't attached a separate capture for every check.
 
-- [Network Validation Register — baseline 2026-11-21](network-validation.md)
-
-A session observation is not the same as a retained verification artifact. The register states that distinction explicitly. Evidence added later should identify an exact test, date, expected/observed result and redaction review.
+When I add new evidence, I'll include the date, what I tested, what I expected and what actually happened. I'll also note anything I had to remove before publishing it.

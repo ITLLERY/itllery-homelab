@@ -1,20 +1,22 @@
-# ADR-0001 | Segmentation, Restricted Management and Recoverability
+# ADR-0001: Why I separated the network
 
-**Status:** Accepted as design direction; individual controls are verified separately  
-**Date:** 2026-11-21  
-**Classification:** PUBLIC / SANITIZED
+**Decision:** Segmented network, restricted administration and a recovery path  
+**Recorded:** 2026-11-21  
+**Status:** Design decision; individual controls still need separate tests
 
-## Context
+## Why I made this choice
 
-The laboratory combines routine work, virtualized services, detection tools and controlled security experiments. A flat network would create unnecessary paths between systems with different risk levels. An error in routing or switch configuration can also make the environment difficult to administer.
+My lab contains normal workstations, servers, security tools and machines for controlled attack simulations. A flat network would be easier to set up, but it would also give those systems more access to each other than they need.
+
+I also learned how disruptive a wrong network change can be. When routing or VLAN settings are wrong, management access can disappear along with the service I was trying to fix. I therefore want to check changes carefully and keep a separate way to recover.
 
 ## Decision
 
-I will organize systems by trust and function, apply explicit cross-zone access policy, restrict administrative services, and preserve a recoverable management path when making network changes. Changes should be planned, checked twice before application, validated from more than one vantage point and have a defined rollback.
+I'll divide the lab into zones based on function and risk. Access between them should be allowed only where there is a reason for it. Management services should be restricted, and changes to the router or switch should have a known rollback.
 
-The exact subnets, VLANs, interfaces, firewall rules, exceptions and recovery entry points remain in the private as-built documentation.
+I check important changes twice before applying them and verify both allowed and blocked traffic afterwards. The real addressing, VLANs, firewall rules and rescue details stay in my private documentation.
 
-## Alternatives considered
+## Other options I considered
 
 | Option | Trade-off |
 | --- | --- |
@@ -23,13 +25,10 @@ The exact subnets, VLANs, interfaces, firewall rules, exceptions and recovery en
 | Fully disconnected testing for every workload | Strong isolation for selected risks, but may prevent realistic monitoring exercises |
 | Segmented network with strictly controlled exceptions | More configuration and testing effort; supports both learning and controlled telemetry |
 
-## Consequences
+## Trade-offs
 
-- Requires continuous maintenance of zone intent, access exceptions and test coverage.
-- A failure in switching or routing can impact management; recovery must be independently considered.
-- High-risk experiments may require stronger physical or logical disconnection than ordinary segmented testing.
-- Mirrored traffic offers observation only for paths it actually sees; routing, switch fabric and endpoint traffic can create blind spots.
+The segmented design takes more work. I have to maintain access exceptions, keep private network records up to date and test the rules after changing them. Some higher-risk experiments may need stronger isolation than normal VLAN separation.
 
-## Verification
+The same applies to monitoring: a mirror can only show the traffic it receives. I can't assume Security Onion sees every network without checking the packets and possible blind spots.
 
-Implementation and test claims are tracked in [the baseline register](../as-is-vs-to-be.md) and [validation log](../../../evidence/sanitized/network-validation.md). This ADR records the decision, **not** a claim that all related safeguards are complete.
+I track the actual progress in [current vs planned](../as-is-vs-to-be.md) and the [network validation register](../../../evidence/sanitized/network-validation.md). This decision record explains the approach; it isn't proof that everything has been implemented.

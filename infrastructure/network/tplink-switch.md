@@ -1,16 +1,13 @@
-# TP-Link | VLAN-Aware Switching and Monitoring Design
+# TP-Link switch
 
-**Document ID:** NET-PLAT-002 | **Revision:** 1.0 | **Baseline:** 2026-11-21 | **Classification:** PUBLIC
+**Document:** NET-PLAT-002  
+**Baseline:** 2026-11-21
 
-## Purpose
+I use a managed TP-Link switch for VLAN-aware connections between the lab systems. It also has a role in the planned packet-monitoring setup. The real port assignments and management address are not included here.
 
-The managed TP-Link switch provides VLAN-aware access and trunking in the lab. It is also part of the future packet-monitoring design. This document intentionally omits the real model-specific port map and switch management location.
+## What worked and what still needs checking
 
-## State and open work
-
-Selected active switch paths were operating after the recovery. That does not mean every intended access port, PVID, management setting or mirror was finished. The late-November work list still included management-plane migration/review, final assignment of some ports and the monitoring mirror.
-
-## Configuration review matrix
+After the November network recovery, the switch was carrying traffic over the paths I needed at the time. I still had to review some VLAN membership, PVID and management settings, along with the final access-port assignments and mirror configuration. A working connection on one port isn't enough to say that the whole switch is configured correctly.
 
 | Area | Required inspection | Public status |
 | --- | --- | --- |
@@ -21,16 +18,14 @@ Selected active switch paths were operating after the recovery. That does not me
 | Access-port roles | Endpoint placement matches the private as-built plan | Pending final review |
 | Mirror/SPAN | Correct source, direction, destination and capture behavior | Planned; not verified |
 
-## Why a mirror alone is insufficient
+## About the mirror port
 
-A mirror destination receives only the traffic selected by the switch. Switch-local traffic, traffic routed elsewhere, dropped frames and high-throughput oversubscription can affect visibility. A mirror is a **sensor feed**, not a reliable claim to observe every VLAN or every packet. I will verify actual packets and any loss before calling monitoring complete.
+I want Security Onion to receive selected network traffic through a mirror. But a mirror only copies the traffic chosen on the switch; it can't automatically see everything routed elsewhere. There can also be dropped frames or capture loss if more traffic is mirrored than the destination can handle.
 
-## Safe acceptance workflow
+For that reason, I won't call the sensor coverage complete just because a SPAN setting appears in the interface. Once Security Onion is installed, I'll check the packets arriving at the sensor and whether the expected events show up in its detection pipeline.
 
-- Confirm the switch can be administered through an approved context before changing management settings.
-- Change one domain at a time; do not adjust router and switch VLAN settings together without rollback.
-- For each tested endpoint, validate both a legitimate access path and a prohibited path.
-- Capture private port/VLAN membership information for rollback; publish only a sanitized summary of outcomes.
-- After the Security Onion deployment, confirm actual mirrored frames and corresponding detection pipeline events.
+## How I plan to finish the review
 
-**Next milestone:** Complete the outstanding switch review and record endpoint-originated checks rather than inferring correctness from the management GUI alone.
+I'll make sure I can still administer the switch before changing its management settings. Then I'll review the intended tagged and untagged membership and test endpoints on both allowed and blocked paths. I'll keep the real port map and rollback details private.
+
+The remaining work is to finish the switch audit and check the mirror with actual traffic.

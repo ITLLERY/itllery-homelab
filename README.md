@@ -1,34 +1,32 @@
 # ITLLERY Homelab
 
-This is where I document my cybersecurity home lab: the machines I use, what each one does, how I think about security and what I learn by building and testing things.
+I started building this lab because I wanted to understand cybersecurity by working with real machines. I use it to practise networking, virtualization, monitoring, backups and controlled security tests. When something breaks, I try to find the cause, fix it and write down what happened.
 
-The lab keeps changing. **Some parts are running, others are still planned.** A folder doesn't mean I've finished or tested that project.
+The setup changes as I learn. Some systems are running, while others are still being prepared. I keep that distinction in the documentation so the repository shows where each project actually stands.
 
-## The lab
+## My lab
 
-My wider inventory has **13 physical compute devices**. **11 are documented in the [public hardware inventory](docs/hardware/hardware-inventory.md)**, including my laptop and Raspberry Pi. Two other machines remain out of the detailed public inventory. Virtual machines don't count as separate physical nodes.
+I have **13 physical compute devices** in the wider inventory. I describe **11 of them** in my [hardware inventory](docs/hardware/hardware-inventory.md), including the laptop and Raspberry Pi. I keep two reserve machines out of the detailed public overview. The MikroTik router and TP-Link switch are separate network devices; virtual machines do not count as extra physical machines.
 
-I use dedicated systems for daily work, SOC monitoring, virtualization, local AI, controlled testing, network utilities and backup/recovery. I also use MikroTik and managed switching.
+The machines have different jobs. I use Proxmox for virtualized services, separate GPUs for local AI and dedicated hardware for security monitoring and testing. I also have a daily Linux workstation, a backup server and a small utility node.
 
-## Start here
+## Documentation
 
-- [Public architecture and role map](docs/architecture/README.md)
-- [Network infrastructure baseline (2026-11-21)](docs/architecture/network-overview.md)
-- [As-Is / To-Be network status](docs/architecture/as-is-vs-to-be.md)
-- [Hardware inventory: 13 physical devices, 11 publicly documented](docs/hardware/README.md)
-- [Detailed CPU / RAM / GPU specifications](docs/hardware/hardware-inventory.md)
-- [What I share and what stays private](docs/security/README.md)
-- [Network platform notes](infrastructure/network/README.md)
+- [Architecture and roles](docs/architecture/README.md)
+- [Hardware inventory](docs/hardware/hardware-inventory.md)
+- [Network baseline from November 2026](docs/architecture/network-overview.md)
+- [What is working and what still needs testing](docs/architecture/as-is-vs-to-be.md)
+- [MikroTik, TP-Link and firewall notes](infrastructure/network/README.md)
 - [SOC monitoring](infrastructure/soc/README.md)
 - [Runbooks](runbooks/README.md)
-- [Sanitized evidence](evidence/sanitized/README.md)
-- [Documentation changelog](CHANGELOG.md)
+- [Test notes and evidence](evidence/sanitized/README.md)
+- [What I keep private](docs/security/README.md)
+- [Changes to this documentation](CHANGELOG.md)
 
-## Current work
+## What I'm working on now
 
-The November 2026 priority is restoring and documenting a controlled, segmented network. Some management and routing paths have been recovered, while full switching, isolation, monitoring coverage and restore validation are still in progress. The [network validation register](evidence/sanitized/network-validation.md) separates session observations from pending evidence.
+In November 2026 I rebuilt parts of the network after problems with the router and switch. Routing and access to both Proxmox interfaces are working again. I still need to complete several switch checks, test the isolation between zones more thoroughly and validate the monitoring path for the planned Security Onion sensor. I keep those open items in the [network validation register](evidence/sanitized/network-validation.md).
 
-I also plan a Windows laptop offline-AI build, with Kali in a separate follow-up. I'll add tested commands, detection rules, screenshots, results and fixes when each project is actually completed.
+I'm also preparing an offline-AI project on a Windows laptop. I'll document the steps and test results as I complete them, with Kali Linux planned for a separate follow-up.
 
-I won't upload live network configuration, private access details, passwords, recovery secrets or malware binaries.
-
+I use AI tools when researching, troubleshooting and writing notes. The hardware, decisions and test results described here relate to my own lab. I don't upload credentials, live network configuration or sensitive recovery information.

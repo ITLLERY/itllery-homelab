@@ -1,14 +1,15 @@
-# Firewall Policy | Principles and Validation
+# Firewall rules and checks
 
-**Document ID:** NET-SEC-001 | **Revision:** 1.0 | **Baseline:** 2026-11-21 | **Classification:** PUBLIC
+**Document:** NET-SEC-001  
+**Baseline:** 2026-11-21
 
-## Policy model
+I use a default-deny approach for traffic between different network zones. If two systems need to communicate, I want a clear reason for allowing that connection. Return traffic for established connections is handled as part of the stateful rules, but I still have to consider the endpoint firewall and switch configuration.
 
-I prefer an explicit allowlist model for cross-zone access: stateful return traffic is allowed where appropriate, approved communications receive narrowly scoped exceptions, and traffic without an approved reason is denied. Router-level rules are only one layer; endpoint firewalls and switch configuration also matter.
+During the November rebuild I checked selected drop-rule counters and the final deny behaviour. That told me some unwanted traffic was being blocked. It wasn't a complete review of every rule or every possible network path.
 
-The project session showed selected drop-rule counters and review of the final deny behavior. This is **evidence of some effective blocking**, not a complete firewall audit.
+## The access rules I aim for
 
-## Illustrative intent (not the deployed rule set)
+The examples below describe my intended policy. They aren't the actual firewall entries from my router.
 
 | Example source category | Example destination category | Design outcome | Reason |
 | --- | --- | --- | --- |
@@ -20,19 +21,12 @@ The project session showed selected drop-rule counters and review of the final d
 
 This table is illustrative and **must not be interpreted as current access paths**. The actual source/destination pairs and protocols are kept offline.
 
-## Firewall review checklist
+## What I check when changing a rule
 
-1. Separate router-management (**input**) and transit (**forward**) policy assessment.
-2. Inspect rule order, action, interface/address-list scope and connection-state handling.
-3. Evaluate IPv4 and IPv6 independently where supported and enabled.
-4. Review fast-path/acceleration behavior for consistency with filtering and observability goals.
-5. Confirm that each approved exception has a real operational requirement.
-6. Run endpoint-originated tests with time, expected result and observed result.
-7. Check relevant counters/logs and ensure they correspond to the intended test traffic.
-8. Test again after topology, route, firmware or peer changes.
+I first decide whether the traffic is meant for the router itself (**input**) or is passing through it (**forward**). Then I look at the rule order, connection states, interface or address-list scope and any exceptions. IPv4 and IPv6 need separate attention where both are available.
 
-## Evidence caveat
+After a change, I test from the relevant endpoint. One connection should be allowed because it is needed; another should fail because the policy denies it. I check counters and logs for that particular test period rather than relying on old hits. I also consider fast-path behaviour, especially when I'm trying to observe traffic.
 
-A nonzero drop counter does not prove the block applies to **every** source, protocol or alternative route. A successful GUI connection does not prove that other management exposure is absent. Both positive and negative tests are required.
+A successful browser connection doesn't prove that every other management path is closed. Likewise, a non-zero drop counter doesn't tell me that all unwanted traffic is blocked. I still need complete positive and negative tests for the intended zone boundaries.
 
-Reference: [NIST SP 800-41 Rev. 1](https://csrc.nist.gov/pubs/sp/800/41/r1/final). See [the validation register](../../evidence/sanitized/network-validation.md).
+I use [NIST SP 800-41 Rev. 1](https://csrc.nist.gov/pubs/sp/800/41/r1/final) as a reference for firewall policy. I keep the results in my [network validation notes](../../evidence/sanitized/network-validation.md).

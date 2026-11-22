@@ -2,7 +2,7 @@
 
 **Last updated:** 2026-11-22
 
-I document the physical machines behind my cybersecurity lab here, including their hardware, roles and deployment status.
+I keep the hardware information for my cybersecurity lab here. The detailed page covers the machines I use, the components inside them and what each one is for.
 
 My wider inventory includes **13 physical compute devices**. I describe **11 of them** publicly, including my laptop and Raspberry Pi. I keep two reserve machines out of the detailed public inventory. I count the MikroTik router and managed TP-Link switch separately; virtual machines and containers are not additional physical machines.
 
@@ -10,7 +10,7 @@ My wider inventory includes **13 physical compute devices**. I describe **11 of 
 
 **[Full hardware inventory — CPU, RAM, GPU, storage notes and deployment status](hardware-inventory.md)**
 
-I keep the specifications in one place instead of repeating the same table on multiple pages. The detailed inventory covers my Proxmox hosts, AI nodes, Security Onion build, Wi-Fi sensor, isolated test node, backup server and daily workstation.
+I keep the full specification table in one place so I don't have to update the same information on several pages. The detailed inventory covers my Proxmox hosts, AI nodes, Security Onion build, Wi-Fi sensor, isolated test node, backup server and daily workstation.
 
 ## Documentation approach
 

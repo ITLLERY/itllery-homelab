@@ -1,18 +1,17 @@
-# MikroTik | Routing, Policy and Recovery
+# MikroTik routing and recovery
 
-**Document ID:** NET-PLAT-001 | **Revision:** 1.0 | **Baseline:** 2026-11-21 | **Classification:** PUBLIC
+**Document:** NET-PLAT-001  
+**Baseline:** 2026-11-21
 
-## Platform role
+My MikroTik hAP ax² handles routing and firewall policy in the lab. It's also where I learned that a small change to a bridge, VLAN or management rule can affect much more than the port I was working on.
 
-The MikroTik hAP ax² is the lab's routing and policy platform. I use it to study how switching, VLANs, inter-zone policy, administrative exposure and rollback behave together. Actual RouterOS configuration and management details are private.
+## November 2026 recovery
 
-## Recovery baseline
+I had to recover the router and get normal network access working again. During that work I reached the management interface, inspected VLAN filtering, reviewed selected firewall behaviour and created both a configuration export and backup.
 
-The November 2026 session involved recovery of the router and re-establishing routine network connectivity. Router management was reached, VLAN-filtering state was inspected, and selected firewall behavior was reviewed. The project record also confirms creation of a configuration export and a backup artifact.
+That gave me a working starting point. It didn't prove that every VLAN was isolated or that I could restore the backup without another test. I keep those checks open rather than counting them as finished.
 
-**What this proves:** A functioning baseline was recovered and inspected. **What it does not prove:** Every rule is correct, every VLAN is isolated, and the stored backup can be restored on demand.
-
-## Configuration domains to track privately
+## What I keep track of
 
 | Domain | Control or review question |
 | --- | --- |
@@ -26,17 +25,12 @@ The November 2026 session involved recovery of the router and re-establishing ro
 | Recovery | Does a safe rescue procedure remain available during planned changes? |
 | Backup | Is there an offline, access-controlled configuration archive and tested restore path? |
 
-## Change-control requirements
+## How I handle later changes
 
-1. Capture the current state into **private** storage before editing.
-2. Identify the single planned change and its potential management impact.
-3. Confirm recovery access and define a rollback before applying.
-4. Apply in a bounded maintenance session; avoid simultaneous router and switch changes.
-5. Test approved access **and** forbidden access, with negative test cases.
-6. Record the result and private artifact identifiers; publish sanitized conclusions only.
+Before editing the router, I save the current configuration privately and decide exactly what I want to change. I check whether the change could block the management path, and I make sure a recovery option is available. I also compare the proposed setting against my private network map twice.
 
-## Security of exports
+I avoid changing the router and switch at the same time unless the rollback is already clear. After applying one change, I test the connections that should work and those that should be blocked. If something behaves differently, I stop and return to the known-good state before trying another adjustment.
 
-RouterOS exports and backups can expose private topology, identifiers and potentially sensitive values. No raw `.rsc` or `.backup` file belongs in this public repository. File mode and storage location, secret handling and restore credentials are documented privately. Simply removing a password line does not make a complete export safe to publish.
+RouterOS exports can reveal internal addresses, port relationships and other sensitive information. I don't put raw `.rsc` or `.backup` files in this repository, even if the obvious password fields have been removed.
 
-See [change runbook](../../runbooks/network-change-procedure.md) and [recovery runbook](../../runbooks/network-recovery.md).
+I use the [change notes](../../runbooks/network-change-procedure.md) before making adjustments and the [recovery notes](../../runbooks/network-recovery.md) when something goes wrong.

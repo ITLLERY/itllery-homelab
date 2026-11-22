@@ -1,22 +1,24 @@
-# Network Infrastructure
+# Networking
 
-This section documents how I design, operate and validate the ITLLERY lab network. **All public pages are sanitized**: no live addresses, exact VLAN numbers, physical port maps, management entry points or raw configuration exports.
+This is where I keep my MikroTik and TP-Link notes. I wanted the lab to have separate networks for normal work, administration, monitoring and security experiments, but getting those boundaries right takes more than just creating VLANs.
 
-## Network platform
+I write down why I changed something, what worked and what I still need to test. The real addressing plan, port assignments and full configurations stay in my private notes.
 
-- [MikroTik: routing, policy and recovery](mikrotik.md)
-- [TP-Link: switching and monitoring design](tplink-switch.md)
-- [Firewall policy and validation](firewall-policy.md)
+## Devices and settings
+
+- [MikroTik routing and recovery](mikrotik.md)
+- [TP-Link switch](tplink-switch.md)
+- [Firewall rules and tests](firewall-policy.md)
 - [Remote administration](remote-management.md)
 
-## Architecture and operations
+## Design and results
 
-- [Network infrastructure overview](../../docs/architecture/network-overview.md)
-- [Conceptual network role map](../../docs/architecture/network-topology.md)
-- [Trust zones](../../docs/architecture/network-zones.md)
-- [Current vs target state](../../docs/architecture/as-is-vs-to-be.md)
-- [Controlled change procedure](../../runbooks/network-change-procedure.md)
-- [Network recovery procedure](../../runbooks/network-recovery.md)
-- [Sanitized validation register](../../evidence/sanitized/network-validation.md)
+- [Network overview](../../docs/architecture/network-overview.md)
+- [Role diagram](../../docs/architecture/network-topology.md)
+- [Network zones](../../docs/architecture/network-zones.md)
+- [Current and planned checks](../../docs/architecture/as-is-vs-to-be.md)
+- [How I prepare a network change](../../runbooks/network-change-procedure.md)
+- [How I recover after a problem](../../runbooks/network-recovery.md)
+- [Test notes](../../evidence/sanitized/network-validation.md)
 
-**As of 2026-11-21:** Routing and selected administration were restored; the switch audit, full segmentation matrix, SPAN capture and complete backup-restore exercise still have open items.
+During the November 2026 rebuild, I restored routing and several management paths. I still have work to do on the full switch review, zone isolation, the Security Onion mirror and a proper backup-restore test.

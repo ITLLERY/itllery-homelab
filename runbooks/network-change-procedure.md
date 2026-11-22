@@ -1,45 +1,33 @@
-# Runbook | Controlled Network Change
+# Making a network change
 
-**Runbook ID:** RB-NET-001  
-**Version:** 1.0 (procedure template; full rehearsal pending)  
-**Review date:** 2026-11-21  
-**Classification:** PUBLIC / SANITIZED
+**Runbook:** RB-NET-001  
+**Reviewed:** 2026-11-21  
+**State:** Working procedure; full rehearsal not yet documented
 
-## Goal and scope
+I use this checklist when I change a firewall rule, route, VLAN or management setting. The goal is to avoid guessing my way through several changes and then not knowing which one caused a problem.
 
-Safely change a network rule, route, VLAN or management setting without treating trial-and-error as a change process. This runbook is a reusable framework, **not** a transcript of a successfully completed end-to-end rehearsal.
+## Before I start
 
-## Before the change
+1. I write down what I want to change, which systems might be affected and what would make me stop.
+2. I save the current configuration in private storage. I don't push router and switch exports to GitHub.
+3. I check that the normal management connection works and that I have a separate recovery option.
+4. I note which connections should work afterwards and which should remain blocked.
+5. I compare the planned settings with my private network map **twice**. I try to check them from two different angles, such as the router and the affected endpoint.
+6. I decide how to undo the change before applying it.
 
-1. Open a private change record: objective, owner, impacted systems, approved maintenance window and rollback trigger.
-2. Record the current private configuration and state. Keep exports and backups away from GitHub.
-3. Establish a known-good authorized administrative connection and an independent recovery option.
-4. Enumerate the exact expected traffic outcomes and at least one failure case.
-5. Check proposed changes against the private as-built mapping **twice**, preferably from two independent views (router/switch or configuration/endpoint).
-6. Define a maximum observation period and explicit abort conditions; never depend on memory to restore connectivity.
+## While making the change
 
-## Execution
+I change one thing at a time, particularly when routing or VLAN settings could affect management access. I avoid changing both ends of an important link at once unless I have a safe way to roll back.
 
-1. Change **one** component or policy domain at a time.
-2. Avoid altering both ends of a critical VLAN or management path in one unprotected step.
-3. Preserve a working way to undo the last operation.
-4. Record the time and change identifier privately.
-5. Test allowed access, prohibited access, DNS/services if affected, and required management connectivity.
-6. Examine logs and counters **for this test window**; distinguish them from old hits.
+Afterwards I test a permitted connection and a prohibited one. If the change affects DNS or another service, I check that too. I also make sure I can still reach the management interface. Firewall counters and logs only help if I can relate them to the test I just performed.
 
-## Decision gate
-
-**Pass:** Required paths work, denied paths remain denied, management/recovery remain available, and observed behavior matches the change record.  
-**Fail / ambiguous:** Stop, revert using the pre-agreed path, and document deviations before trying again.
+If the results aren't what I expected, I stop and restore the previous working state instead of adding more changes on top.
 
 ## After the change
 
-- Capture a new approved private baseline if the change is accepted.
-- Update private addressing, zone, rule and port records.
-- Post a sanitized change summary and test outcome to GitHub.
-- Add unresolved issues to the To-Be register.
+Once the expected behaviour is confirmed, I update the private rule, port or addressing records and keep the new baseline. I can then publish a short, redacted note describing what changed and what I tested. If something remains uncertain, I add it to the open work list.
 
-## Record template
+## Change record
 
 | Field | Required entry |
 | --- | --- |
@@ -52,4 +40,4 @@ Safely change a network rule, route, VLAN or management setting without treating
 | Outcome | Passed / failed / reverted / inconclusive |
 | Follow-up | Owner and action |
 
-**Safety rule:** Do not attempt a simulated lockout on a live router merely to generate portfolio evidence.
+I don't deliberately lock myself out of a live router just to produce a screenshot or a demonstration.

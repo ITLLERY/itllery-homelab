@@ -1,15 +1,13 @@
-# Network Validation Register | Sanitized
+# Network validation notes
 
-**Document ID:** NET-EVID-001 | **Baseline:** 2026-11-21 | **Classification:** PUBLIC  
-**Evidence policy:** No raw router/switch exports, real IPs, device-specific access paths or unreviewed screenshots.
+**Document:** NET-EVID-001  
+**Baseline:** 2026-11-21
 
-## What these labels mean
+I started this list after the November network recovery so I could distinguish what I had seen working from what still needed a proper test. **Session-observed** means I confirmed something during the work but don't have public raw evidence attached. **Partial** means the check covered only part of the requirement. **Pending** means I haven't completed the acceptance test.
 
-- **Session-observed:** I saw or confirmed the result during recovery but have not attached public raw evidence.
-- **Partial:** A relevant observation exists, but it does not establish complete coverage.
-- **Pending:** No completed acceptance test is available for the stated scope.
+This is a record of that work, not a fresh scan or automated test run. I haven't run new tests just to create this document.
 
-These records document historical progress, not tests performed by this repository or by a CI system. **No current network scan or automated test was executed to create this page.**
+## Results recorded so far
 
 | Test ID | Check | Outcome as of baseline | Evidence limitation / next action |
 | --- | --- | --- | --- |
@@ -24,7 +22,9 @@ These records document historical progress, not tests performed by this reposito
 | NET-009 | Security Onion sensor and SPAN visibility | Pending | Bare-metal sensor deployment and capture validation not complete |
 | NET-010 | Full restore from last-known-good router backup | Pending | Never infer restore success from backup creation |
 
-## Required evidence structure for a future test
+## How I'll record future tests
+
+When I repeat a check, I want to know the date, the source and destination, the expected behaviour and the actual result. I'll keep the full details privately and use safe aliases in any public evidence.
 
 | Field | Example (fictional, not a real test) |
 | --- | --- |
@@ -38,12 +38,8 @@ These records document historical progress, not tests performed by this reposito
 | Evidence reference | Reviewed screenshot or redacted excerpt |
 | Reviewer | Self-review or named reviewer, if applicable |
 
-## Minimum future verification suite
+## What I'll check next
 
-1. One positive and one negative test for every approved zone-policy boundary.
-2. Administrative reachability from allowed and disallowed origins.
-3. VLAN/PVID behavior from representative endpoints rather than only GUI configuration.
-4. Backup integrity and a non-disruptive restore rehearsal.
-5. Mirror traffic matching the intended monitored flow and checks for capture loss.
+I still need positive and negative tests for each important zone boundary, including management access from allowed and disallowed endpoints. I'll check VLAN tagging and PVID behaviour from real connected systems, rehearse restoration in a safe environment and verify which mirrored packets arrive at the Security Onion sensor.
 
-**Publication check:** Remove addresses, VLAN numbers, interface names that reveal live wiring, identities, tokens, timestamps that expose access patterns, serials and metadata before committing evidence.
+Before I publish any evidence, I'll check it for real IPs, VLAN IDs, interface names that reveal cabling, credentials, serial numbers and metadata that shouldn't be public.
