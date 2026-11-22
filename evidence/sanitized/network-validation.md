@@ -5,7 +5,7 @@
 
 ## What these labels mean
 
-- **Session-observed:** A result was seen or operator-confirmed during the recovery work, but raw capture has not been retained here.
+- **Session-observed:** I saw or confirmed the result during recovery but have not attached public raw evidence.
 - **Partial:** A relevant observation exists, but it does not establish complete coverage.
 - **Pending:** No completed acceptance test is available for the stated scope.
 
@@ -14,10 +14,10 @@ These records document historical progress, not tests performed by this reposito
 | Test ID | Check | Outcome as of baseline | Evidence limitation / next action |
 | --- | --- | --- | --- |
 | NET-001 | Selected firewall deny behavior | Session-observed | Drop counters observed; re-run with identifiable test window and permitted source contexts |
-| NET-002 | Authorized reachability of two Proxmox web interfaces | Session-observed | Operator confirmed both available; archive redacted screenshots of fresh validation |
-| NET-003 | Restricted administrative / WireGuard access | Session-observed | Functioning authorized access reported; test negative cases independently |
+| NET-002 | Authorized reachability of two Proxmox web interfaces | Session-observed | I reached both web interfaces; redacted screenshots from a fresh check are still needed |
+| NET-003 | Restricted administrative / WireGuard access | Session-observed | I confirmed authorized access; separate negative tests are still needed |
 | NET-004 | Active router-to-switch service path | Partial | Operational traffic observed; no full VLAN membership/PVID audit attached |
-| NET-005 | Router configuration export and backup exist | Session-observed | Creation reported; checksum, retention and recovery exercise not publicly evidenced |
+| NET-005 | Router configuration export and backup exist | Session-observed | I created both; I have not published checksum, retention or recovery-test evidence |
 | NET-006 | Rescue operation after management failure | Partial | Rescue procedure exists / used in recovery context; controlled drill pending |
 | NET-007 | Full end-to-end inter-zone isolation matrix | Pending | Needs source-endpoint testing for all intended zones and alternate paths |
 | NET-008 | Complete switch management and access-port review | Pending | Outstanding management migration/review and selected port roles |
