@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-22 — Lenovo P3 Tower models
+
+- Identified the Service Proxmox (i7-13700K) and Security Onion (i9-13900K) systems as Lenovo ThinkStation P3 Tower machines, alongside SOC Core.
+- Added Security Onion to the BIOS inventory with its BIOS and microcode entries left pending until I check them.
+- Kept the October stability result limited to the two tested Proxmox hosts; no new hardware tests were performed.
+
 ## 2026-11-22 — Shorter architecture and BIOS notes
 
 - Removed commentary about Mermaid styling from the architecture pages.

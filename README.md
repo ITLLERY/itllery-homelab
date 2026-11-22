@@ -6,7 +6,7 @@ The setup changes as I learn. Some systems are running, while others are still b
 
 ## My lab
 
-I have **13 physical compute devices** in the wider inventory. I describe **11 of them** in my [hardware inventory](docs/hardware/hardware-inventory.md), including the laptop and Raspberry Pi. I keep two reserve machines out of the detailed public overview. The MikroTik router and TP-Link switch are separate network devices; virtual machines do not count as extra physical machines.
+I have **13 physical compute devices** in the inventory. I describe **11 of them** in my [hardware inventory](docs/hardware/hardware-inventory.md), including the laptop and Raspberry Pi. I keep two reserve machines out of the detailed public overview. The MikroTik router and TP-Link switch are separate network devices; virtual machines do not count as extra physical machines.
 
 The machines have different jobs. I use Proxmox for virtualized services, separate GPUs for local AI and dedicated hardware for security monitoring and testing. I also have a daily Linux workstation, a backup server and a small utility node.
 
