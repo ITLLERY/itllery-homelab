@@ -54,7 +54,7 @@ The MikroTik hAP ax² router and managed TP-Link switch are **network appliances
 
 ### Local AI
 
-- **AI Node 01:** Intel Core i9-9900K on an ASUS ROG Maximus XI Z390 motherboard (exact Maximus XI submodel not yet recorded), 64 GB DDR4 and an ASUS ROG Strix GeForce RTX 3090 (24 GB VRAM).
+- **AI Node 01:** Intel Core i9-9900K on an ASUS ROG Maximus XI (Z390) motherboard, 64 GB DDR4 and an ASUS ROG Strix GeForce RTX 3090 (24 GB VRAM).
 - **AI Node 02:** Intel Core i9-9900K on an ASUS TUF Z390 board, 64 GB DDR4, one Gigabyte GeForce RTX 3060 (12 GB VRAM, three-fan cooler; exact Gigabyte variant not yet recorded) and one ASUS ROG Strix GeForce RTX 2080 Ti (11 GB VRAM). The two GPUs are separate devices: **VRAM does not automatically combine into one contiguous pool**.
 
 ### Security monitoring and test nodes
