@@ -53,7 +53,7 @@ I count my MikroTik hAP ax² router and managed TP-Link switch as separate **net
 
 ### Lenovo BIOS and CPU stability checks
 
-I checked both running Lenovo-based Proxmox hosts on **21 October 2026**. Neither showed hardware errors or instability in the checks I ran. This is a useful stability result, but **it does not prove that physical CPU degradation is impossible or absent**. I keep the BIOS versions, microcode readings and actual tests in [my Lenovo BIOS and stability notes](lenovo-bios-stability.md).
+I checked both Lenovo Proxmox hosts on **21 October 2026**. I found no signs of CPU degradation or hardware errors during the tests. The [BIOS version table](lenovo-bios-stability.md) lists the results.
 
 ### Local AI
 

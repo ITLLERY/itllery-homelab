@@ -75,8 +75,6 @@ flowchart TB
     style Operations fill:#0C1525,stroke:#2569DB,stroke-width:1.5px,color:#EAF2FF
 ```
 
-I use the same black-and-blue ITLLERY style here as in the [network role diagram](network-topology.md). I shortened the headings and switched to SVG text labels so they fit in GitHub. The dashed Security Onion box is still planned, and the invisible layout links are not real connections.
-
 I use the daily workstation for normal work, while the Proxmox hosts run service and security workloads. The AI nodes are separate so experiments with local models don't have to share my daily environment. The Wi-Fi sensor and isolated test machine have their own purposes. Backup and recovery are also separate jobs.
 
 Security Onion on dedicated bare-metal hardware is **planned**. I won't describe its packet capture coverage as finished until I've installed it and checked what traffic reaches the sensor.

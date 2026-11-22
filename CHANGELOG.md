@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-22 — Shorter architecture and BIOS notes
+
+- Removed commentary about Mermaid styling from the architecture pages.
+- Reduced the Lenovo BIOS document to the version table and a short statement of the stability-test results.
+- No new CPU tests, firmware updates or infrastructure changes.
+
 ## 2026-11-22 — Lenovo BIOS checks and Mermaid label fixes
 
 - Added my October 2026 Lenovo BIOS and CPU stability observations for the SOC Core and Service Proxmox hosts, including BIOS versions, active Linux microcode and the tests performed.
