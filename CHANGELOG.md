@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-22 — Hardware inventory corrections v1.2
+
+- Identified the workstation GPU as an ASUS ROG Astral GeForce RTX 5090 (32 GB).
+- Confirmed the isolated HP ProDesk test node has 64 GB installed RAM and a 2 TB SSD; hardware ready, separate deployment/isolation validation still required.
+- Confirmed the primary PBS hardware has 32 GB RAM and two 6 TB disks in RAID1.
+- Confirmed the Raspberry Pi 4 has 8 GB RAM.
+- No live IPs, backup placement, encryption or recovery secrets were disclosed.
+
 ## 2026-11-22 — Public hardware inventory v1.1
 
 - Added a detailed public-safe register for 11 documented compute devices (13 in the wider inventory, 2 omitted from detailed public disclosure).
