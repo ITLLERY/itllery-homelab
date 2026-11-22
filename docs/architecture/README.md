@@ -1,28 +1,26 @@
-# ITLLERY — Public Lab Architecture
+# How I've organized the lab
 
-**Last reviewed:** 2026-11-21  
-**Scope:** Logical roles only. This is **not** a real network topology or a diagram of deployed connectivity.
+**Reviewed:** 2026-11-22
 
-I build and test my cybersecurity lab on separate physical systems. The idea is to keep daily work, management, monitoring, local AI, backups and risky experiments from becoming one trusted environment.
+I keep daily work, administration, monitoring, local AI and security experiments on different systems. That makes it easier to understand what each machine is doing and reduces the chance of a risky test affecting something I rely on every day.
 
-## Network baseline documentation
+The diagram below shows the **roles** of the machines. It isn't a picture of the real cabling, VLANs or firewall rules. I keep that information in my private notes.
 
-- [Network infrastructure overview](network-overview.md)
-- [Public-safe conceptual topology](network-topology.md)
-- [Trust zones and segregation criteria](network-zones.md)
-- [As-Is / To-Be status and open work](as-is-vs-to-be.md)
-- [ADR-0001: segmentation and recovery](adr/0001-segmentation-and-recovery.md)
+## Architecture notes
 
-## Hardware at a glance
+- [Network overview](network-overview.md)
+- [Role diagram](network-topology.md)
+- [Network zones](network-zones.md)
+- [Current and planned work](as-is-vs-to-be.md)
+- [Why I chose segmentation and recovery access](adr/0001-segmentation-and-recovery.md)
 
-- **11 physical compute devices selected for this public overview.** These include my laptop and Raspberry Pi; not all 11 are running at the same time.
-- **2 other machines** are excluded from the detailed public map: one reserved for future recovery, and one unassigned spare.
-- Network equipment (MikroTik and managed switching) is counted separately.
-- Virtual machines and containers are workloads, **not extra physical nodes**.
+## Physical systems
 
-See [the public hardware overview](../hardware/README.md) and [detailed CPU / RAM / GPU inventory](../hardware/hardware-inventory.md) for the 11 documented physical device roles and current deployment status.
+My wider inventory contains **13 compute devices**. I document **11 devices** publicly, including my laptop and Raspberry Pi, and leave two reserve machines out of the detailed list. The MikroTik router and TP-Link switch aren't part of the compute-device count.
 
-## Logical role map
+The [hardware inventory](../hardware/hardware-inventory.md) has the CPU, RAM, GPU and role details. Not every machine runs all the time, and having the hardware ready doesn't mean its intended software is installed.
+
+## Roles in the lab
 
 ```mermaid
 flowchart TB
@@ -49,23 +47,10 @@ flowchart TB
     end
 ```
 
-The diagram groups devices by **purpose only**. There are no physical or logical connections shown, and it should not be used to infer my real VLANs, firewall policy, trust paths or switch layout.
+I use the daily workstation for normal work, while the Proxmox hosts run service and security workloads. The AI nodes are separate so experiments with local models don't have to share my daily environment. The Wi-Fi sensor and isolated test machine have their own purposes. Backup and recovery are also separate jobs.
 
-## Separation principles
+Security Onion on dedicated bare-metal hardware is **planned**. I won't describe its packet capture coverage as finished until I've installed it and checked what traffic reaches the sensor.
 
-- **Daily work:** Not a place for high-risk experiments.
-- **Management:** Restricted admin operations; details remain private.
-- **SOC and monitoring:** Designed for endpoint events and selected monitored traffic. Monitoring coverage is tested, not assumed.
-- **AI:** Separate compute and model experiments.
-- **Isolated tests:** Controlled environments with explicit isolation boundaries. No ordinary trust path to personal systems.
-- **Backup and recovery:** Kept apart from normal experiments, with restoration procedures validated separately.
+## What I publish
 
-## Current vs planned
-
-I own the physical equipment listed in the hardware overview, but hardware ownership does not mean a full deployment is finished. Security Onion bare-metal monitoring, some network controls, and secondary backup arrangements are planned or being built. I'll label verified setups and experiments when I document them.
-
-## What I don't publish
-
-No real IP addressing, VLAN identifiers, port-by-port switch diagrams, router exports, WireGuard keys, exposed services, privileged access paths, backup encryption or recovery secrets, or actual malware samples. See [public sharing rules](../security/README.md).
-
-I document individual projects only after performing and verifying them.
+I share the reasons behind the architecture, the parts I've tested and the problems I still need to solve. I leave real addresses, VLAN numbers, physical connections, management paths, keys and full configuration exports out of the public repository. My [sharing rules](../security/README.md) explain that in more detail.

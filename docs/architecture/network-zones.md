@@ -1,10 +1,9 @@
-# Network Zones and Trust Model
+# Network zones
 
-**Document ID:** NET-ARCH-003 | **Revision:** 1.0 | **Baseline:** 2026-11-21 | **Classification:** PUBLIC
+**Document:** NET-ARCH-003  
+**Baseline:** 2026-11-21
 
-## Design intent
-
-Each zone has a reason to exist and an explicit risk profile. This is a conceptual model; it intentionally omits actual VLAN IDs, subnets, hosts, ports and firewall exceptions.
+I don't want every system in the lab to trust every other system. A machine used for everyday work has a different risk profile from one used to analyse potentially hostile files. The zones below describe how I divide the responsibilities. They are a design overview, not a list of real VLAN numbers or network connections.
 
 | Logical zone | Typical function | Security design expectation |
 | --- | --- | --- |
@@ -19,19 +18,10 @@ Each zone has a reason to exist and an explicit risk profile. This is a conceptu
 | Rescue | Recovery from configuration or access failures | Small, controlled attack surface; not a general user network |
 | Wireless clients/sensors | Wireless access and defensive observation | Explicit policy; passive capture is not equivalent to routed reachability |
 
-## Trust boundaries
+## How I check separation
 
-I do not assume that VLAN membership alone provides a complete security boundary. Effective separation depends on correct switch tagging, routing, firewall behavior, host policy and the absence of unintended alternate paths. A monitoring mirror copies selected packets; it is not itself a firewall control.
+A VLAN by itself doesn't guarantee isolation. The switch has to tag and handle traffic correctly, and the router and endpoint firewalls have to enforce the intended rules. I also have to check that there isn't another path around those controls.
 
-No trust relationship listed above is automatically a statement of current production reachability. Each intended exception must be justified, implemented and tested separately.
+For each zone, I want a clear record of which machines belong there, which connections are needed and why. I then test at least one allowed path and one blocked path from the relevant endpoints. I keep the real addresses and rules privately and publish only reviewed results.
 
-## Acceptance criteria for each zone
-
-- The purpose and asset membership are written down privately.
-- Required flows are approved and documented privately.
-- Positive tests prove required access is functional.
-- Negative tests prove explicitly prohibited paths fail.
-- Administrative and recovery dependencies are understood.
-- Results are dated, reproducible and linked to a sanitized evidence record.
-
-**Open item:** Complete end-to-end segmentation validation for all active zones; avoid claiming the isolated-test environment is fully ready before its boundaries are measured.
+A SPAN port helps me observe selected traffic; it doesn't block traffic or guarantee that I can see everything. Complete end-to-end segmentation testing and the Security Onion monitoring checks are still open work.

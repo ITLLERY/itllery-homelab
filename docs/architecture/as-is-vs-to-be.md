@@ -1,15 +1,9 @@
-# Network Baseline | As-Is vs To-Be
+# Network work: current state and next steps
 
-**Document ID:** NET-ARCH-004  
-**Baseline date:** 2026-11-21  
-**Classification:** PUBLIC / SANITIZED
+**Document:** NET-ARCH-004  
+**Baseline:** 2026-11-21
 
-## Status vocabulary
-
-- **Session-observed:** I saw or confirmed this during the November recovery, but I have not published the raw evidence.
-- **Implemented, recheck needed:** Configuration appears present but the required acceptance test has not been fully retained.
-- **Partially verified:** Some functionality was tested; full coverage is not established.
-- **Planned:** Intentional future work, not a claim of deployment.
+After rebuilding the network, I wanted one place to record what was working and what still needed attention. I use **Session-observed** for something I saw during the recovery without keeping public raw evidence. **Partial** means I tested only part of a feature. **Planned** means the work isn't finished.
 
 | Capability | As-Is on 2026-11-21 | To-Be / acceptance criterion |
 | --- | --- | --- |
@@ -25,17 +19,10 @@
 | Switch mirror / SPAN | Design work in progress | Confirm mirror source selection, direction, packet loss and sensor visibility |
 | High-risk isolated testing | Planned / incomplete | Prove no unintended routes or management dependencies exist |
 
-## Known technical debt
+## What I still need to check
 
-1. Complete TP-Link configuration review without changing working paths blindly.
-2. Reconcile private as-built documentation with the original conceptual zone plan.
-3. Finish end-to-end allow/deny tests, including endpoint-level controls.
-4. Validate the backup *restore*, not just the ability to create an archive.
-5. Recheck rescue and rollback steps as a deliberate maintenance test.
-6. Validate Security Onion monitoring **after** installation; do not infer coverage from the presence of a mirror.
+The next job is to review the remaining TP-Link settings against my private port and VLAN plan. After that, I'll test the permitted and blocked connections between the zones from real endpoints. I also want to check the rescue procedure and perform a proper backup-restore exercise rather than relying on the presence of backup files alone.
 
-## Publication rule
+Security Onion will need its own tests after installation. I'll check the mirrored traffic, look for missing paths and verify that the capture and detection pipeline actually sees the events I expect.
 
-If a check was only described in a conversation and no sanitized artifact is attached, I state that plainly. Missing evidence is a follow-up task, not a reason to invent a pass.
-
-Related: [Network validation register](../../evidence/sanitized/network-validation.md).
+These are my notes from the November recovery, not a fresh test report. The [validation register](../../evidence/sanitized/network-validation.md) keeps the observations separate from work that still needs evidence.

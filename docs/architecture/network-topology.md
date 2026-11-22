@@ -1,13 +1,9 @@
-# Network Topology | Public Role Map
+# Network roles
 
-**Document ID:** NET-ARCH-002  
-**Revision:** 1.0  
-**Baseline:** 2026-11-21  
-**Classification:** PUBLIC / SANITIZED
+**Document:** NET-ARCH-002  
+**Baseline:** 2026-11-21
 
-## Diagram scope
-
-This diagram groups functions by **role**, not by physical connection. It does not disclose live cabling, trunk relationships, security boundaries, IP addresses, actual VLAN IDs, management routes or SPAN source ports. The location of a box does not mean it is reachable from any other box.
+I made this diagram to show which parts of the lab serve which purpose. It groups the router, switch, workstations, servers and security systems without showing how they are actually connected.
 
 ```mermaid
 flowchart TB
@@ -36,15 +32,8 @@ flowchart TB
     class SO planned;
 ```
 
-## How to interpret this diagram
+The diagram isn't a wiring map. It doesn't show real VLANs, trunk ports, access rules, management routes or the Security Onion mirror source. A box appearing beside another box doesn't mean the two systems can reach each other.
 
-- **Known components:** The network includes a MikroTik router, managed TP-Link switching and the documented lab roles.
-- **Not shown:** Port-to-device relationships, network identifiers, exact routing paths, actual firewall permits, management entry points and sensor wiring.
-- **Not yet established:** Complete Security Onion packet visibility across all desired traffic classes.
-- **Not a test report:** A role diagram cannot prove L2 isolation, L3 filtering or the ability to restore from backup.
+The monitoring role is also still being developed. I haven't verified full Security Onion packet visibility, and a drawing can't demonstrate isolation or successful recovery from a backup.
 
-## Private engineering documents
-
-The complete private set should include an as-built Layer 1/2 connection map, Layer 3 addressing and routing plan, firewall rule inventory, management dependencies and a separate monitoring source-to-destination map. These records are intentionally **not** part of this public repository.
-
-For the decision rationale, see [ADR-0001](adr/0001-segmentation-and-recovery.md).
+I keep the real Layer 1/2 connections, IP addressing, firewall exceptions and monitoring paths in private documentation. The reasoning behind the separation is in [ADR-0001](adr/0001-segmentation-and-recovery.md).

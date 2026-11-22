@@ -1,11 +1,10 @@
 # ITLLERY | Physical Hardware Inventory
 
 **Reviewed:** 2026-11-22  
-**Document type:** Public hardware overview  
-**Based on:** My hardware inventory and build notes, updated in November 2026  
-**Scope:** Physical compute devices only; this is not a network asset map.
+**Updated:** 2026-11-22  
+**Scope:** My physical machines and their roles, without private network details.
 
-## Device count
+## How many machines I have
 
 My wider inventory currently contains **13 physical compute devices**. I document **11 of them** in this public register and keep **2 reserve machines** out of the detailed list. Being in my inventory does not mean a device is deployed or online.
 
@@ -25,7 +24,7 @@ My wider inventory currently contains **13 physical compute devices**. I documen
 
 I count my MikroTik hAP ax² router and managed TP-Link switch as separate **network appliances**, not among the 13 compute devices. VMs, containers and services are **not additional physical machines**.
 
-## Hardware by role
+## Machines and specifications
 
 | ID / role | Platform / processor | System RAM | Graphics / accelerators | Use and status |
 | --- | --- | --- | --- | --- |
@@ -43,7 +42,7 @@ I count my MikroTik hAP ax² router and managed TP-Link switch as separate **net
 
 **How I track progress:** If I leave a specification unspecified, it means I have not added a confirmed value to this register—not that the part is missing. I track hardware, OS installation, isolation and completed security tests separately.
 
-## Hardware detail notes
+## Notes on the machines
 
 ### Workstation and virtualized services
 
@@ -68,7 +67,7 @@ I count my MikroTik hAP ax² router and managed TP-Link switch as separate **net
 - **Primary PBS:** Intel Core i7-8700, 32 GB DDR4 RAM and **2 × 6 TB WD Red HDDs in RAID1** (12 TB raw, approximately 6 TB usable before filesystem overhead). Used on demand rather than counted as a continuously active production server. I intentionally **limit routine backup transfer throughput to approximately 60 MiB/s** to reduce sustained workload on the HDDs. This is an operational rate limit, **not the disks' rated or measured maximum speed**, and does not by itself guarantee longer drive life. I keep backup placement, encryption and retention details private.
 - **Jump / utility Pi:** Raspberry Pi 4 with 8 GB LPDDR4 RAM, supporting selected network utilities and controlled infrastructure administration; AdGuard Home and SmokePing have been used in the lab.
 
-## Accelerator overview
+## Graphics cards
 
 | GPU model | Count | Published VRAM per GPU |
 | --- | ---: | --- |
@@ -82,7 +81,7 @@ I count my MikroTik hAP ax² router and managed TP-Link switch as separate **net
 
 My six discrete NVIDIA GPUs are distributed across five machines in this register. I do not count integrated graphics.
 
-## Public vs private inventory
+## What I leave out
 
 I deliberately leave real IP addresses, VLAN IDs, MAC addresses, serials, cabling, the complete storage register, backup placement, encryption and retention settings, management endpoints, firewall exceptions, credentials and live configuration exports out of GitHub. I keep those details privately.
 
