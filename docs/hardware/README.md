@@ -14,7 +14,7 @@ I keep the full specification table in one place so I don't have to update the s
 
 ## BIOS and CPU stability
 
-I also keep my [Lenovo BIOS and CPU stability checks](lenovo-bios-stability.md) from October 2026. The test results showed no instability or hardware errors during those checks, but a short stability test cannot prove the absence of long-term degradation.
+I keep the [Lenovo BIOS and CPU stability table](lenovo-bios-stability.md) here. The two Proxmox hosts showed no errors during my October 2026 checks; I will check the Security Onion P3 Tower separately.
 
 ## Documentation approach
 

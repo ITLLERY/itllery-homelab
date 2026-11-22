@@ -29,9 +29,9 @@ I count my MikroTik hAP ax² router and managed TP-Link switch as separate **net
 | ID / role | Platform / processor | System RAM | Graphics / accelerators | Use and status |
 | --- | --- | --- | --- | --- |
 | **Daily workstation** | **AMD Ryzen 9 9950X**, Ubuntu desktop | **64 GB DDR5** | **ASUS ROG Astral GeForce RTX 5090, 32 GB** | Primary working system, video production and GPU work; operating |
-| **SOC Core** | **Lenovo ThinkStation P3**, **Intel Core i9-13900K**, Proxmox | **128 GB DDR5** | **RTX A2000, 12 GB** | Virtualized security services and Wazuh-related workloads; operating |
-| **Service Proxmox** | **Lenovo platform**, **Intel Core i7-13700K**, Proxmox | **64 GB DDR5** | Integrated graphics | General infrastructure services and VMs; operating |
-| **Security Onion host** | **Intel Core i9-13900K**, dedicated bare-metal platform | **64 GB DDR5** | Integrated graphics | Security Onion network analysis / packet capture; **deployment planned, not verified complete** |
+| **SOC Core** | **Lenovo ThinkStation P3 Tower**, **Intel Core i9-13900K**, Proxmox | **128 GB DDR5** | **RTX A2000, 12 GB** | Virtualized security services and Wazuh-related workloads; operating |
+| **Service Proxmox** | **Lenovo ThinkStation P3 Tower**, **Intel Core i7-13700K**, Proxmox | **64 GB DDR5** | Integrated graphics | General infrastructure services and VMs; operating |
+| **Security Onion host** | **Lenovo ThinkStation P3 Tower**, **Intel Core i9-13900K**, dedicated bare-metal platform | **64 GB DDR5** | Integrated graphics | Security Onion network analysis / packet capture; **deployment planned, not verified complete** |
 | **AI Node 01** | **Intel Core i9-9900K**, **ASUS ROG Maximus XI Z390** | **64 GB DDR4** | **ASUS ROG Strix RTX 3090, 24 GB** | Local model inference and experiments; I have not rechecked workloads for this inventory update |
 | **AI Node 02** | **Intel Core i9-9900K**, **ASUS TUF Z390** | **64 GB DDR4** | **Gigabyte GeForce RTX 3060, 12 GB (triple-fan)** + **ASUS ROG Strix GeForce RTX 2080 Ti, 11 GB** | Secondary local AI compute; I have not rechecked workloads for this inventory update |
 | **Wi-Fi sensor mini** | **HP ProDesk 400 G6 Mini**, **Intel Core i5-10500T** | **16 GB DDR4 (2 × 8 GB)** | Integrated graphics | **Samsung 970 EVO M.2 NVMe SSD**; **Alfa AWUS036AXML USB Wi-Fi adapter**; **I have not completed the documented OS / monitoring checks yet** |
@@ -47,13 +47,13 @@ I count my MikroTik hAP ax² router and managed TP-Link switch as separate **net
 ### Workstation and virtualized services
 
 - **Daily workstation:** Linux/Ubuntu-based desktop with an AMD Ryzen 9 9950X CPU, 64 GB DDR5 RAM, an ASUS ROG Astral GeForce RTX 5090 (32 GB VRAM), and a **Samsung 9100 PRO 4 TB M.2 NVMe SSD**. I have not added the workstation motherboard model to this inventory.
-- **SOC Core:** My Lenovo ThinkStation P3 runs an Intel Core i9-13900K, 128 GB DDR5, RTX A2000 12 GB and Proxmox. On 21 October 2026 I checked BIOS **S0IKT78A** (dated **30 July 2025**) and active Linux microcode **0x132**. The CPU stress check completed without hardware errors or instability in the logs I inspected. The separate Security Onion bare-metal system is **not** counted as a VM of this host.
-- **Service Proxmox:** My Lenovo-based service host runs an Intel Core i7-13700K and 64 GB DDR5. On 21 October 2026 I checked BIOS **S0IKT72A** (dated **24 December 2024**) and active Linux microcode **0x132**. The CPU and RAM stress checks completed without reported errors. During the November network recovery, I reached both Proxmox management interfaces.
+- **SOC Core:** My Lenovo ThinkStation P3 Tower runs an Intel Core i9-13900K, 128 GB DDR5, RTX A2000 12 GB and Proxmox. On 21 October 2026 I checked BIOS **S0IKT78A** (dated **30 July 2025**) and active Linux microcode **0x132**. The CPU stress check completed without hardware errors or instability in the logs I inspected. The separate Security Onion bare-metal system is **not** counted as a VM of this host.
+- **Service Proxmox:** My Lenovo ThinkStation P3 Tower service host runs an Intel Core i7-13700K and 64 GB DDR5. On 21 October 2026 I checked BIOS **S0IKT72A** (dated **24 December 2024**) and active Linux microcode **0x132**. The CPU and RAM stress checks completed without reported errors. During the November network recovery, I reached both Proxmox management interfaces.
 - **HP Victus laptop:** Ryzen 7 7840HS, 32 GB DDR5 RAM and RTX 4070 Laptop GPU (8 GB). The Windows offline-AI build and benchmarks are a separate project; I will add the results once I finish testing.
 
 ### Lenovo BIOS and CPU stability checks
 
-I checked both Lenovo Proxmox hosts on **21 October 2026**. I found no signs of CPU degradation or hardware errors during the tests. The [BIOS version table](lenovo-bios-stability.md) lists the results.
+I checked the two Lenovo Proxmox hosts on **21 October 2026** and found no signs of CPU degradation or hardware errors during those tests. The Security Onion P3 Tower is listed separately; I will check its BIOS and stability later. The [BIOS version table](lenovo-bios-stability.md) records the current results.
 
 ### Local AI
 
@@ -62,7 +62,7 @@ I checked both Lenovo Proxmox hosts on **21 October 2026**. I found no signs of 
 
 ### Security monitoring and test nodes
 
-- **Dedicated Security Onion host:** Intel Core i9-13900K, 64 GB DDR5 RAM, with separate high-performance storage planned for the operating system and packet capture and an Intel I350-class network adapter in my build plan. I still need to document bare-metal installation and validate mirror/capture coverage.
+- **Dedicated Security Onion host:** Lenovo ThinkStation P3 Tower with Intel Core i9-13900K, 64 GB DDR5 RAM, with separate high-performance storage planned for the operating system and packet capture and an Intel I350-class network adapter in my build plan. I still need to document bare-metal installation and validate mirror/capture coverage.
 - **Wi-Fi sensor:** HP ProDesk 400 G6 Mini with i5-10500T, 16 GB DDR4 (2 × 8 GB), a **Samsung 970 EVO M.2 NVMe SSD** and an **Alfa AWUS036AXML USB Wi-Fi adapter** for wireless monitoring experiments. I have not yet completed and documented the OS, monitor-mode and monitoring checks for this node.
 - **Isolated test system:** Second HP ProDesk 400 G6 Mini with i5-10500T. **64 GB RAM (2 × 32 GB) and a 2 TB M.2 SSD are installed**; the hardware build is ready for controlled experiments. I will verify the operating system, isolation boundaries and handling procedures separately before high-risk testing.
 
