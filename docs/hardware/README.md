@@ -25,7 +25,7 @@ The wider lab inventory contains **13 physical compute devices**. **11 are docum
 
 | Device | Processor | RAM | Main accelerator | Status |
 | --- | --- | --- | --- | --- |
-| Daily workstation | CPU pending re-verification | 64 GB | ASUS ROG Astral RTX 5090 32 GB | Operating |
+| Daily workstation | CPU pending re-verification | 64 GB DDR5 | ASUS ROG Astral RTX 5090 32 GB | Operating; Samsung 9100 PRO 4 TB M.2 NVMe |
 | SOC Core Proxmox | i9-13900K | 128 GB | RTX A2000 12 GB | Operating |
 | Service Proxmox | i7-13700K | 64 GB | — | Operating |
 | Security Onion bare metal | i9-13900K | 64 GB DDR5 | — | Deployment planned |

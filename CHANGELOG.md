@@ -3,7 +3,8 @@
 ## 2026-11-22 — Hardware platform and memory specification corrections v1.3
 
 - Documented AI Node 01 as an ASUS ROG Maximus XI (Z390) build with an ASUS ROG Strix RTX 3090 24 GB.
-- Corrected RAM types: Security Onion host 64 GB DDR5; HP Victus 32 GB DDR5; primary PBS 32 GB DDR4; Raspberry Pi 4 8 GB LPDDR4.
+- Corrected RAM types: Daily workstation 64 GB DDR5; Security Onion host 64 GB DDR5; HP Victus 32 GB DDR5; primary PBS 32 GB DDR4; Raspberry Pi 4 8 GB LPDDR4.
+- Added the Daily workstation's Samsung 9100 PRO 4 TB M.2 NVMe SSD.
 - Updated the detailed hardware register and quick-reference table. No device configuration was changed.
 
 ## 2026-11-22 — Hardware inventory corrections v1.2

@@ -29,7 +29,7 @@ The MikroTik hAP ax² router and managed TP-Link switch are **network appliances
 
 | ID / role | Platform / processor | System RAM | Graphics / accelerators | Use and status |
 | --- | --- | --- | --- | --- |
-| **Daily workstation** | Ubuntu desktop; CPU model not re-verified for public documentation | **64 GB** | **ASUS ROG Astral GeForce RTX 5090, 32 GB** | Primary working system, video production and GPU work; operating |
+| **Daily workstation** | Ubuntu desktop; CPU model not re-verified for public documentation | **64 GB DDR5** | **ASUS ROG Astral GeForce RTX 5090, 32 GB** | Primary working system, video production and GPU work; operating |
 | **SOC Core** | Lenovo P3, **Intel Core i9-13900K**, Proxmox | **128 GB DDR5** | **RTX A2000, 12 GB** | Virtualized security services and Wazuh-related workloads; operating |
 | **Service Proxmox** | **Intel Core i7-13700K**, Proxmox | **64 GB DDR5** | Not specified | General infrastructure services and VMs; operating |
 | **Security Onion host** | **Intel Core i9-13900K**, dedicated bare-metal platform | **64 GB DDR5** | No GPU requirement documented | Security Onion network analysis / packet capture; **deployment planned, not verified complete** |
@@ -47,7 +47,7 @@ The MikroTik hAP ax² router and managed TP-Link switch are **network appliances
 
 ### Workstation and virtualized services
 
-- **Daily workstation:** Linux/Ubuntu-based daily machine with an ASUS ROG Astral GeForce RTX 5090 (32 GB VRAM) for editing, development and AI experiments. The CPU and motherboard are intentionally left unasserted until I verify their current specifications.
+- **Daily workstation:** Linux/Ubuntu-based desktop with 64 GB DDR5 RAM, an ASUS ROG Astral GeForce RTX 5090 (32 GB VRAM), and a **Samsung 9100 PRO 4 TB M.2 NVMe SSD**. The CPU and motherboard are intentionally left unasserted until I verify their current specifications.
 - **SOC Core:** Intel Core i9-13900K, 128 GB DDR5, RTX A2000 12 GB and Proxmox. Runs the primary virtualized security environment. The separate Security Onion bare-metal system is **not** counted as a VM of this host.
 - **Service Proxmox:** Intel Core i7-13700K and 64 GB DDR5. The November network recovery confirmed authorized browser access to this host and the SOC Core host.
 - **HP Victus laptop:** Ryzen 7 7840HS, 32 GB DDR5 RAM and RTX 4070 Laptop GPU (8 GB). Windows-based offline-AI installation and benchmarking are separate projects; documentation does not imply those tests are finished.
