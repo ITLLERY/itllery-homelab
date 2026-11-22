@@ -29,12 +29,12 @@ The MikroTik hAP ax² router and managed TP-Link switch are **network appliances
 
 | ID / role | Platform / processor | System RAM | Graphics / accelerators | Use and status |
 | --- | --- | --- | --- | --- |
-| **Daily workstation** | Ubuntu desktop; CPU model not re-verified for public documentation | **64 GB DDR5** | **ASUS ROG Astral GeForce RTX 5090, 32 GB** | Primary working system, video production and GPU work; operating |
+| **Daily workstation** | **AMD Ryzen 9 9950X**, Ubuntu desktop | **64 GB DDR5** | **ASUS ROG Astral GeForce RTX 5090, 32 GB** | Primary working system, video production and GPU work; operating |
 | **SOC Core** | Lenovo P3, **Intel Core i9-13900K**, Proxmox | **128 GB DDR5** | **RTX A2000, 12 GB** | Virtualized security services and Wazuh-related workloads; operating |
 | **Service Proxmox** | **Intel Core i7-13700K**, Proxmox | **64 GB DDR5** | Not specified | General infrastructure services and VMs; operating |
 | **Security Onion host** | **Intel Core i9-13900K**, dedicated bare-metal platform | **64 GB DDR5** | No GPU requirement documented | Security Onion network analysis / packet capture; **deployment planned, not verified complete** |
 | **AI Node 01** | **Intel Core i9-9900K**, **ASUS ROG Maximus XI (Z390)** | **64 GB DDR4** | **ASUS ROG Strix RTX 3090, 24 GB** | Local model inference and experiments; hardware reported, latest workload status not independently checked |
-| **AI Node 02** | **Intel Core i9-9900K**, ASUS TUF Z390 platform | **64 GB DDR4** | **Gigabyte GeForce RTX 3060, 12 GB (triple-fan)** + **ASUS ROG Strix GeForce RTX 2080 Ti, 11 GB** | Secondary local AI compute; hardware reported, latest workload status not independently checked |
+| **AI Node 02** | **Intel Core i9-9900K**, **ASUS TUF Z390** | **64 GB DDR4** | **Gigabyte GeForce RTX 3060, 12 GB (triple-fan)** + **ASUS ROG Strix GeForce RTX 2080 Ti, 11 GB** | Secondary local AI compute; hardware reported, latest workload status not independently checked |
 | **Wi-Fi sensor mini** | **HP ProDesk 400 G6 Mini**, **Intel Core i5-10500T** | **16 GB DDR4 (2 × 8 GB)** | Integrated graphics | Planned wireless monitoring; **OS / deployment not complete** |
 | **Isolated test mini** | **HP ProDesk 400 G6 Mini**, **Intel Core i5-10500T** | **64 GB DDR4 (2 × 32 GB installed)** | Integrated graphics | Controlled purple-team experiments and isolated high-risk analysis; **hardware ready**, isolation and exercise validation tracked separately |
 | **Primary PBS** | **Intel Core i7-8700**, Proxmox Backup Server | **32 GB DDR4** | Not specified | On-demand backup system; **2 × 6 TB drives in RAID1** |
@@ -47,7 +47,7 @@ The MikroTik hAP ax² router and managed TP-Link switch are **network appliances
 
 ### Workstation and virtualized services
 
-- **Daily workstation:** Linux/Ubuntu-based desktop with 64 GB DDR5 RAM, an ASUS ROG Astral GeForce RTX 5090 (32 GB VRAM), and a **Samsung 9100 PRO 4 TB M.2 NVMe SSD**. The CPU and motherboard are intentionally left unasserted until I verify their current specifications.
+- **Daily workstation:** Linux/Ubuntu-based desktop with an AMD Ryzen 9 9950X CPU, 64 GB DDR5 RAM, an ASUS ROG Astral GeForce RTX 5090 (32 GB VRAM), and a **Samsung 9100 PRO 4 TB M.2 NVMe SSD**. The exact motherboard model has not yet been verified for public documentation.
 - **SOC Core:** Intel Core i9-13900K, 128 GB DDR5, RTX A2000 12 GB and Proxmox. Runs the primary virtualized security environment. The separate Security Onion bare-metal system is **not** counted as a VM of this host.
 - **Service Proxmox:** Intel Core i7-13700K and 64 GB DDR5. The November network recovery confirmed authorized browser access to this host and the SOC Core host.
 - **HP Victus laptop:** Ryzen 7 7840HS, 32 GB DDR5 RAM and RTX 4070 Laptop GPU (8 GB). Windows-based offline-AI installation and benchmarking are separate projects; documentation does not imply those tests are finished.
@@ -61,7 +61,7 @@ The MikroTik hAP ax² router and managed TP-Link switch are **network appliances
 
 - **Dedicated Security Onion host:** Intel Core i9-13900K, 64 GB DDR5 RAM, with a separate high-performance storage plan for operating system and packet capture and an Intel I350-class network adapter reported in the build plan. Bare-metal installation and mirror/capture validation remain separate acceptance milestones.
 - **Wi-Fi sensor:** HP ProDesk 400 G6 Mini with i5-10500T and 16 GB RAM (2 × 8 GB). A Samsung NVMe SSD was selected/tested for this node; OS installation and production monitoring have **not** been confirmed. The planned wireless workflow uses a compatible external adapter.
-- **Isolated test system:** Second HP ProDesk 400 G6 Mini with i5-10500T. **64 GB RAM (2 × 32 GB) and a 2 TB SSD are installed**; the hardware build is ready for controlled experiments. The operating system, access isolation and safe-handling procedures require their own validation before any high-risk testing.
+- **Isolated test system:** Second HP ProDesk 400 G6 Mini with i5-10500T. **64 GB RAM (2 × 32 GB) and a 2 TB M.2 SSD are installed**; the hardware build is ready for controlled experiments. The operating system, access isolation and safe-handling procedures require their own validation before any high-risk testing.
 
 ### Recovery and utilities
 
