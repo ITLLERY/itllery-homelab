@@ -6,7 +6,7 @@ The lab keeps changing. **Some parts are running, others are still planned.** A 
 
 ## The lab
 
-My wider inventory has **13 physical compute devices**. **11 are shown in this public overview**, including my laptop and Raspberry Pi. Two other machines are kept out of the detailed public inventory: one reserved for future backup work and one unassigned spare. Virtual machines don't count as separate physical nodes.
+My wider inventory has **13 physical compute devices**. **11 are documented in the [public hardware inventory](docs/hardware/hardware-inventory.md)**, including my laptop and Raspberry Pi. Two other machines remain out of the detailed public inventory. Virtual machines don't count as separate physical nodes.
 
 I use dedicated systems for daily work, SOC monitoring, virtualization, local AI, controlled testing, network utilities and backup/recovery. I also use MikroTik and managed switching.
 
@@ -15,7 +15,8 @@ I use dedicated systems for daily work, SOC monitoring, virtualization, local AI
 - [Public architecture and role map](docs/architecture/README.md)
 - [Network infrastructure baseline (2026-11-21)](docs/architecture/network-overview.md)
 - [As-Is / To-Be network status](docs/architecture/as-is-vs-to-be.md)
-- [Hardware and node roles](docs/hardware/README.md)
+- [Hardware inventory: 13 physical devices, 11 publicly documented](docs/hardware/README.md)
+- [Detailed CPU / RAM / GPU specifications](docs/hardware/hardware-inventory.md)
 - [What I share and what stays private](docs/security/README.md)
 - [Network platform notes](infrastructure/network/README.md)
 - [SOC monitoring](infrastructure/soc/README.md)
