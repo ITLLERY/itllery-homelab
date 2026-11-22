@@ -33,7 +33,7 @@ The wider lab inventory contains **13 physical compute devices**. **11 are docum
 | AI Node 02 (ASUS TUF Z390) | i9-9900K | 64 GB DDR4 | Gigabyte RTX 3060 12 GB (3-fan) + ASUS ROG Strix RTX 2080 Ti 11 GB | Hardware documented |
 | Wi-Fi sensor ProDesk | i5-10500T | 16 GB DDR4 | Integrated | Samsung 970 EVO M.2; Alfa AWUS036AXML; deployment not verified |
 | Isolated test ProDesk | i5-10500T | 64 GB installed | Integrated | Hardware ready, 2 TB M.2 SSD |
-| Primary PBS | i7-8700 | 32 GB DDR4 | — | On-demand; 2 × 6 TB WD Red HDD RAID1; backup cap ~60 MB/s |
+| Primary PBS | i7-8700 | 32 GB DDR4 | — | On-demand; 2 × 6 TB WD Red HDD RAID1; backup cap ~60 MiB/s |
 | Raspberry Pi 4 | Broadcom ARM platform | 8 GB LPDDR4 | Integrated | Utility / jump role |
 | HP Victus laptop | Ryzen 7 7840HS | 32 GB DDR5 | RTX 4070 Laptop 8 GB | Windows offline-AI build |
 

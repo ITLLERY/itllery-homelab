@@ -1,9 +1,13 @@
 # Changelog
 
+## 2026-11-22 — PBS throughput unit clarification v1.7
+
+- Corrected the documented PBS backup transfer limit from 60 MB/s to **60 MiB/s** (approximately 62.9 MB/s); no configuration change was performed.
+
 ## 2026-11-22 — PBS disk model and backup throughput note v1.6
 
 - Identified the primary PBS storage as two 6 TB WD Red HDDs in RAID1.
-- Documented the owner-selected approximate 60 MB/s routine backup transfer limit to reduce sustained HDD workload, without implying that it is the drives' rated speed or that it guarantees longevity.
+- Documented the owner-selected approximate 60 MiB/s routine backup transfer limit to reduce sustained HDD workload, without implying that it is the drives' rated speed or that it guarantees longevity.
 - Updated the detailed hardware inventory and quick-reference table. No device configuration was changed.
 
 ## 2026-11-22 — Wi-Fi sensor hardware clarification v1.5
