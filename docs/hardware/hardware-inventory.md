@@ -30,13 +30,13 @@ I count my MikroTik hAP ax² router and managed TP-Link switch as separate **net
 | --- | --- | --- | --- | --- |
 | **Daily workstation** | **AMD Ryzen 9 9950X**, Ubuntu desktop | **64 GB DDR5** | **ASUS ROG Astral GeForce RTX 5090, 32 GB** | Primary working system, video production and GPU work; operating |
 | **SOC Core** | **Intel Core i9-13900K**, Proxmox | **128 GB DDR5** | **RTX A2000, 12 GB** | Virtualized security services and Wazuh-related workloads; operating |
-| **Service Proxmox** | **Intel Core i7-13700K**, Proxmox | **64 GB DDR5** | Not specified | General infrastructure services and VMs; operating |
-| **Security Onion host** | **Intel Core i9-13900K**, dedicated bare-metal platform | **64 GB DDR5** | Not specified | Security Onion network analysis / packet capture; **deployment planned, not verified complete** |
+| **Service Proxmox** | **Intel Core i7-13700K**, Proxmox | **64 GB DDR5** | Integrated graphics | General infrastructure services and VMs; operating |
+| **Security Onion host** | **Intel Core i9-13900K**, dedicated bare-metal platform | **64 GB DDR5** | Integrated graphics | Security Onion network analysis / packet capture; **deployment planned, not verified complete** |
 | **AI Node 01** | **Intel Core i9-9900K**, **ASUS ROG Maximus XI Z390** | **64 GB DDR4** | **ASUS ROG Strix RTX 3090, 24 GB** | Local model inference and experiments; I have not rechecked workloads for this inventory update |
 | **AI Node 02** | **Intel Core i9-9900K**, **ASUS TUF Z390** | **64 GB DDR4** | **Gigabyte GeForce RTX 3060, 12 GB (triple-fan)** + **ASUS ROG Strix GeForce RTX 2080 Ti, 11 GB** | Secondary local AI compute; I have not rechecked workloads for this inventory update |
 | **Wi-Fi sensor mini** | **HP ProDesk 400 G6 Mini**, **Intel Core i5-10500T** | **16 GB DDR4 (2 × 8 GB)** | Integrated graphics | **Samsung 970 EVO M.2 NVMe SSD**; **Alfa AWUS036AXML USB Wi-Fi adapter**; **I have not completed the documented OS / monitoring checks yet** |
 | **Isolated test mini** | **HP ProDesk 400 G6 Mini**, **Intel Core i5-10500T** | **64 GB DDR4 (2 × 32 GB)** | Integrated graphics | Controlled purple-team experiments and isolated high-risk analysis; **hardware ready**, isolation and exercise validation tracked separately |
-| **Primary PBS** | **Intel Core i7-8700**, Proxmox Backup Server | **32 GB DDR4** | Not specified | On-demand backup system; **2 × 6 TB WD Red HDDs in RAID1**; backup transfer rate intentionally limited to **~60 MiB/s** |
+| **Primary PBS** | **Intel Core i7-8700**, Proxmox Backup Server | **32 GB DDR4** | Integrated graphics | On-demand backup system; **2 × 6 TB WD Red HDDs in RAID1**; backup transfer rate intentionally limited to **~60 MiB/s** |
 | **Jump / utility node** | **Raspberry Pi 4** | **8 GB LPDDR4** | Integrated graphics | Network utilities and approved administration; I use this node for lab services |
 | **HP Victus laptop** | **AMD Ryzen 7 7840HS** | **32 GB DDR5** | **RTX 4070 Laptop, 8 GB** | Windows offline-AI project; Kali-based follow-up planned |
 
