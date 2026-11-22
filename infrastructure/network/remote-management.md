@@ -1,27 +1,19 @@
-# Remote Administration | Access and Recovery Design
+# Remote administration
 
-**Document ID:** NET-SEC-002 | **Revision:** 1.0 | **Baseline:** 2026-11-21 | **Classification:** PUBLIC
+**Document:** NET-SEC-002  
+**Baseline:** 2026-11-21
 
-## Objective
+I need to reach the router and servers for administration without exposing those interfaces to every machine in the lab. I therefore keep management access restricted and use WireGuard for approved remote connections.
 
-Administration should be possible for authorized operations without creating an unnecessary general-purpose entry point into the lab. The lab uses controlled management and WireGuard-based administration. The real topology, peer definitions and reachable interfaces remain private.
+During the November recovery I confirmed authorized router and WireGuard access. I also reached the web interfaces of both Proxmox hosts. That tells me the approved access worked at the time; it doesn't prove that access is blocked from every other possible source.
 
-## Session observations
+## What I want to maintain
 
-During the November restoration, I confirmed authorized router-management and WireGuard access and reached both Proxmox web interfaces from my approved working context. I use a controlled administration path for command-line access rather than enabling unrestricted management.
+I use individual credentials, restrict management services to the intended contexts and keep track of which VPN peers should still have access. A lost or retired peer needs to be revocable. I also want an independent recovery method in case a routing or firewall mistake removes the normal management path.
 
-These observations are limited to the methods and circumstances tested; they are not proof that all alternative management paths are closed.
+Testing both sides matters. A management interface should work from an approved source and fail from a source that isn't allowed. I also need to test peer revocation and the rescue procedure separately rather than assuming they work.
 
-## Control objectives
-
-- Use individual administrative credentials and avoid shared or publicly documented secrets.
-- Limit exposure of SSH, HTTPS/management services and remote administration to approved contexts.
-- Maintain a record of authorized VPN peers and promptly remove lost or obsolete peers.
-- Review the device and endpoint sides of access policy; a router allowlist alone is not enough.
-- Maintain an independent recovery approach that does not depend on the same failing network path.
-- Record administrative changes and periodically validate access restrictions.
-
-## Validation cases
+## Tests I still want to document
 
 | ID | Acceptance question | Required evidence |
 | --- | --- | --- |
@@ -30,6 +22,4 @@ These observations are limited to the methods and circumstances tested; they are
 | ADM-03 | Can a revoked or disabled VPN peer no longer connect? | Controlled revocation drill |
 | ADM-04 | Is the approved rescue method available when normal management fails? | Controlled recovery exercise |
 
-## Public documentation boundary
-
-I do not publish peer keys, real endpoint addresses, SSH destinations, recovery access paths, authentication methods tied to my devices or detailed management ACLs. Examples in this repository are schematic, not copy-and-paste live access instructions.
+The real endpoints, peer keys, SSH destinations, rescue paths and management rules stay in my private documentation. The examples here explain the approach; they aren't instructions for connecting to my live systems.
