@@ -1,11 +1,12 @@
-# Runbook | Network Recovery and Safe Rollback
+# Recovering the network
 
-**Runbook ID:** RB-NET-002  
-**Version:** 1.0 (framework; full restore drill pending)  
-**Review date:** 2026-11-21  
-**Classification:** PUBLIC / SANITIZED
+**Runbook:** RB-NET-002  
+**Reviewed:** 2026-11-21  
+**State:** Recovery notes; a complete restore rehearsal is still open
 
-## Incident classes
+I use this procedure when routing, switching or management access stops working as expected. The first thing I try to avoid is making the problem worse with more unplanned changes.
+
+## Where I start
 
 | Symptom | Initial question | Recovery priority |
 | --- | --- | --- |
@@ -15,31 +16,21 @@
 | Unexpected inter-zone reachability | Did a rule, route, trunk or alternate path change? | Contain exposure before re-enabling services |
 | Network appliance reset | Is the known-good configuration still recoverable? | Avoid unreviewed broad restoration |
 
-## Controlled workflow
+## My recovery steps
 
-1. **Stop changes** and record the symptoms and earliest known failure time.
-2. Preserve any remaining administrative session; do not log out reflexively.
-3. Confirm whether the fault affects one endpoint, one zone, or multiple functions.
-4. Consult the **private** as-built diagrams and last-known-good change record.
-5. Use the already authorized independent recovery approach if normal management is unavailable.
-6. Restore only the intended known-good state, taking version and configuration compatibility into account.
-7. Recheck administrative access, required services, zone isolation and unexpected open paths.
-8. Record the incident, root cause when known, and corrective action; redact before public sharing.
+1. I stop changing settings and record what stopped working and when I first noticed it.
+2. If an administrative session still works, I keep it open.
+3. I check whether the problem affects one device, one network zone or several parts of the lab.
+4. I compare the current behaviour with the last working configuration and my private connection map.
+5. If normal management no longer works, I use the recovery method already set up for that purpose.
+6. I restore only the known-good settings I need, and I check compatibility before using a backup.
+7. I test management access, required services and the paths that must remain blocked.
+8. I record the cause when I find it and note what I changed to prevent a repeat.
 
-## Backup is not restore evidence
+## Backups need testing
 
-A configuration export may help review settings; a device backup may support restoration under compatible conditions. Their presence does **not** prove recovery will succeed. An actual restore exercise needs a suitable noncritical environment, known-good backup, documented compatibility and a full post-restore acceptance test.
+Creating a router export or backup is useful, but it doesn't prove that restoring it will work. I still need a controlled restore exercise on suitable hardware or a noncritical setup, followed by the same access and isolation checks I would perform after a real recovery.
 
-## Rollback stop conditions
+I won't attempt a rollback with an untrusted backup or one that may not match the device or firmware. I also won't risk destroying the only working recovery connection.
 
-Do not continue an automated or manual rollback if the target firmware/model is incompatible, the backup source is untrusted, the current state is not understood or the operation threatens a still-working recovery route. Escalate to a controlled offline procedure instead.
-
-## Acceptance for a future rehearsal
-
-- Administrative connection restored using the planned method.
-- Required operational traffic functional.
-- Prohibited access paths still blocked.
-- Private backups and change records reconciled.
-- No unreviewed credentials, identifiers or configurations posted publicly.
-
-**Current state:** Recovery capability has been used during the November rebuild, but an independently documented full restore rehearsal remains open.
+During the November rebuild I used recovery access to get the network working again. I haven't yet documented a separate, complete backup-restore rehearsal.

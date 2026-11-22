@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-22 — Documentation rewrite
+
+- Reworked my GitHub notes into clearer, more natural English while keeping the technical details and existing test statuses.
+- Kept the diagrams, hardware specifications, dates and validation results. Planned tasks are still marked as planned.
+- Updated the introductions, network notes, security guidance, runbooks and section pages. No lab configuration was changed by this documentation update.
+
 ## 2026-11-22 — Hardware documentation cleanup v1.8
 
 - Removed the redundant Quick specifications table from the hardware landing page; the full inventory is the single specification reference.
